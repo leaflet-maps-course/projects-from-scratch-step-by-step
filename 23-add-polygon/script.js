@@ -20,8 +20,9 @@ const polygon = L.polygon(
     [43.165409, -2.385702],
     [43.164378, -2.440947],
   ],
+  // fill... es las propiedades del relleno. Sin "fill", las del borde
   { color: "red", weight: 3, fillColor:'blue',fillOpacity:0.1}
-).bindPopup('Hi There!').addTo(map);
+).bindPopup('Estoy aquí!').addTo(map);
 
 map.fitBounds(polygon.getBounds());
 

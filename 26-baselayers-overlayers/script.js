@@ -16,7 +16,9 @@ const cicleLayer = L.tileLayer(tileLayers.thunderForest.openCycleMap, {
 /*var punto = L.marker([37.88437176085360, -4.779524803161621]).bindPopup('Soy un puntazo');
 
 punto.addTo(map);*/
-
+const optionsCircle = { radius: 200}
+const circleCentreSoraluze = L.circle([43.1743001,-2.4132728], optionsCircle);
+const circlesLayers = L.layerGroup([circleCentreSoraluze]).addTo(map);
 // Los mapas base
 var baseMaps = {
     "OSM": defaultLayer,
@@ -25,7 +27,8 @@ var baseMaps = {
 
 // Las superposiciones (capas transparentes)
 var overlayMaps = {
-    "Trail": trailRoutes
+    "Trail": trailRoutes,
+	"Town Hall": circlesLayers
 };
 
 // Documentación oficial del control
