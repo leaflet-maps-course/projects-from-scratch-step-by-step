@@ -7,13 +7,15 @@ L.tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-console.log(drinkWaterSoraluze);
-
-drinkWaterSoraluze.map((drinkWater) => L.marker([drinkWater.lat, drinkWater.lon]).bindPopup([drinkWater.lat, drinkWater.lon].toString()).addTo(map));
+drinkWaterSoraluze.map((drinkWater) =>
+  L.marker([drinkWater.lat, drinkWater.lon]).addTo(map)
+);
 // Añadimos el marcador
-const markerSoraluzeStadium = L.marker([43.180930, -2.421315]).addTo(map);
+const markerSoraluzeStadium = L.marker([43.18093, -2.421315]).addTo(map);
 
-const markerIpuruaStadium = L.marker([43.1817416,-2.4780567], {draggable: true}).addTo(map);
+const markerIpuruaStadium = L.marker([43.1817416, -2.4780567], {
+  draggable: true,
+}).addTo(map);
 
 // Centrar el mapa teniendo en cuenta los dos marcadores (ahora tenemos que hacerlo respecto a todos)
 // map.fitBounds([markerIpuruaStadium.getLatLng(), markerSoraluzeStadium.getLatLng()]);
@@ -21,8 +23,7 @@ const markerIpuruaStadium = L.marker([43.1817416,-2.4780567], {draggable: true})
 // Con todos centramos y se visualiza correctamente
 
 map.fitBounds([
-  markerIpuruaStadium.getLatLng(), 
+  markerIpuruaStadium.getLatLng(),
   markerSoraluzeStadium.getLatLng(),
-  ...drinkWaterSoraluze.map((location) => [location.lat, location.lon])
+  ...drinkWaterSoraluze.map((location) => [location.lat, location.lon]),
 ]);
-

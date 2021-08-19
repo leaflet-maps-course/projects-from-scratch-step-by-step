@@ -13,8 +13,11 @@ let mapClicked = 0;
 map.on('click', function(e){
   mapClicked =+ 1;
   console.log(mapClicked);
+  // Añadimos esto para esperar 0.25 sg y en el caso que se haya reseteado los clicks
+  // no haga nada y añada el círculo
     setTimeout(function(){
         if(mapClicked == 1){
+          console.log("Añadiendo marcador");
           L.marker([e.latlng.lat, e.latlng.lng])
           .bindPopup(
             `<h2>Ubicación:</h2>

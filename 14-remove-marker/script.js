@@ -18,6 +18,7 @@ map.fitBounds([
   markerSoraluzeStadium.getLatLng()
 ]);
 
+// Podría ser lo mismo con "dragend"
 markerIpuruaStadium.on('moveend', () => map.removeLayer(markerIpuruaStadium));
 markerSoraluzeStadium.on('moveend', () => map.removeLayer(markerSoraluzeStadium));
 

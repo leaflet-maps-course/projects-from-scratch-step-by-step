@@ -1,0 +1,48 @@
+// https://leafletjs.com/reference-1.7.1.html#marker-move
+
+/** Eventos del marcador - no heredados */
+marker.on('dragstart', () => {
+
+});
+
+marker.on('drag', () => {
+
+});
+
+marker.on('dragend', () => {
+
+});
+
+marker.on('movestart', () => {
+
+});
+
+marker.on('moveend', () => {
+
+});
+
+// Eventos heredados (Trabajando con el ratón)
+
+marker.on('click', () => {
+
+});
+
+marker.on('dblclick', () => {
+
+});
+
+marker.on('mousedown', () => {
+
+});
+
+marker.on('mouseup', () => {
+
+});
+
+marker.on('mouseover', () => {
+
+});
+
+marker.on('mouseout', () => {
+
+});
