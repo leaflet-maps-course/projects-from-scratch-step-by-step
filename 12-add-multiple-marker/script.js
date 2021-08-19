@@ -9,7 +9,7 @@ L.tileLayer(tileLayers.default, {
 
 console.log(drinkWaterSoraluze);
 
-drinkWaterSoraluze.map((drinkWater) => L.marker([drinkWater.lat, drinkWater.lon]).addTo(map));
+drinkWaterSoraluze.map((drinkWater) => L.marker([drinkWater.lat, drinkWater.lon]).bindPopup([drinkWater.lat, drinkWater.lon].toString()).addTo(map));
 // Añadimos el marcador
 const markerSoraluzeStadium = L.marker([43.180930, -2.421315]).addTo(map);
 

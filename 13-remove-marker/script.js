@@ -18,6 +18,6 @@ map.fitBounds([
   markerSoraluzeStadium.getLatLng()
 ]);
 
-markerIpuruaStadium.on('moveend', (e) => map.removeLayer(markerIpuruaStadium));
-markerSoraluzeStadium.on('moveend', (e) => map.removeLayer(markerSoraluzeStadium));
+markerIpuruaStadium.on('moveend', () => map.removeLayer(markerIpuruaStadium));
+markerSoraluzeStadium.on('moveend', () => map.removeLayer(markerSoraluzeStadium));
 
