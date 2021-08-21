@@ -1,0 +1,4 @@
+Referencias a tener en cuenta
+https://blog.aaronlenoir.com/2019/09/25/draw-gps-track-on-openstreetmap/
+GPX Parse:
+https://luuka.github.io/GPXParser.js/doc/index.html

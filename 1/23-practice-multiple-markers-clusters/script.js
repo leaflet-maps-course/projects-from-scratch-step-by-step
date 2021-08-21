@@ -3,7 +3,6 @@ function groupMarkers(data, markers) {
     const location = data[i];
     const title = (location.tags.name) ? location.tags.name : 'No especificado';
     const elevation = (location.tags.ele) ? ` (${location.tags.ele}m.)` : '';
-    const titleValue = title + elevation;
     const marker = L.marker(new L.LatLng(location.lat, location.lon), { title: title });
     marker.bindPopup(title.concat(elevation));
     markers.addLayer(marker);
