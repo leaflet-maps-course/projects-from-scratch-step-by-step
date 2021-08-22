@@ -29,9 +29,9 @@ openGPXFile.then((gpxData) => {
   // 8.- Visualizamos los puntos
   var paragraph = document.getElementById("points");
   points.map((point) => {
-    console.log(point.lat, point.lon)
+    // console.log(point.lat, point.lon)
     
-    var text = document.createTextNode(`${point.lat}, ${point.lon}`);
+    const text = document.createTextNode(`${point.lat}, ${point.lon}`);
 
     paragraph.appendChild(text);
   });
