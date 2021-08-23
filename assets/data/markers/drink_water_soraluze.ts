@@ -1,4 +1,4 @@
-const drinkWaterSoraluze = [
+export const drinkWaterSoraluze = [
   {
     name: "Sagr Erreka",
     lat: 43.1771136,
