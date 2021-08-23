@@ -1,6 +1,6 @@
 import { Map, tileLayer, marker, Icon, IconOptions } from "leaflet";
-import { tileLayers } from "./../../constants/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
+import { tileLayers } from "../../constants/tile-layer";
+import { ATRIBUTION } from "../../constants/general";
 
 export class MyIcon extends Icon {
     options: IconOptions = {
