@@ -8,5 +8,8 @@
     "allowJs": true,
     "lib": ["es6", "dom"],
     "moduleResolution": "node",
-  }
+  },
+  "exclude": [
+    "node_modules",
+  ]
 }
