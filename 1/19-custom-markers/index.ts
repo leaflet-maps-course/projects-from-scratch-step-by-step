@@ -12,8 +12,8 @@ tileLayer(tileLayers.default, {
 }).addTo(map);
 
 var greenIcon = new Icon({
-  iconUrl: "https://raw.githubusercontent.com/leaflet-maps-course/projects-from-scratch-step-by-step/master/assets/markers/default/leaf-green.png?token=ABGYW4QT5AV4KAHMEXMBTNLBEPTGS",
-  shadowUrl: "https://raw.githubusercontent.com/leaflet-maps-course/projects-from-scratch-step-by-step/master/assets/markers/default/leaf-shadow.png?token=ABGYW4TMBTZ4KOWJ7ZRSWATBEPTIM",
+    iconUrl: "https://leafletjs.com/examples/custom-icons/leaf-green.png",
+    shadowUrl: "https://leafletjs.com/examples/custom-icons/leaf-shadow.png",
   iconSize: [38, 95], // size of the icon
   shadowSize: [50, 64], // size of the shadow
   iconAnchor: [19, 95], // point of the icon which will correspond to marker's location
@@ -22,8 +22,8 @@ var greenIcon = new Icon({
 });
 
 var redIcon = new Icon({
-  iconUrl: "https://raw.githubusercontent.com/leaflet-maps-course/projects-from-scratch-step-by-step/master/assets/markers/default/leaf-red.png?token=ABGYW4T6QXSZCVVJVCXG72DBEPTMK",
-  shadowUrl: "https://raw.githubusercontent.com/leaflet-maps-course/projects-from-scratch-step-by-step/master/assets/markers/default/leaf-shadow.png?token=ABGYW4TMBTZ4KOWJ7ZRSWATBEPTIM",
+  iconUrl: "https://leafletjs.com/examples/custom-icons/leaf-red.png",
+  shadowUrl: "https://leafletjs.com/examples/custom-icons/leaf-shadow.png",
   iconSize: [38, 95], // size of the icon
   shadowSize: [50, 64], // size of the shadow
   iconAnchor: [19, 95], // point of the icon which will correspond to marker's location
