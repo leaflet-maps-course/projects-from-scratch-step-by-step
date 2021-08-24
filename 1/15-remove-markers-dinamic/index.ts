@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker, LatLngTuple } from "leaflet";
+import { Map, tileLayer, marker, LatLngTuple, LayerGroup } from "leaflet";
 import { tileLayers } from "./../../constants/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
@@ -12,16 +12,25 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
+const markersLayerGroup = new LayerGroup();
+
 // Añadiendo acción de borrado
 drinkWaterSoraluze.map((drinkWater) => {
   const markerItem = marker([drinkWater.lat, drinkWater.lon], { draggable: true })
-  markerItem.addTo(map);
+  markerItem.addTo(markersLayerGroup);
   markerItem.on("moveend", () => {
-    map.removeLayer(markerItem);
+    markersLayerGroup.removeLayer(markerItem);
+    console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`)
+  });
+
+  markerItem.on("dblclick", () => {
+    // Eliminamos la capa de los marcadores y desaparecen
+    map.removeLayer(markersLayerGroup);
     console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`)
   });
 });
 
+markersLayerGroup.addTo(map);
 // Centrar el mapa teniendo en cuenta los dos marcadores
 // Recordad que hay que almacenar en un array bidimensional, donde los arrays
 // numéricos son dos elementos, latitud y longitud

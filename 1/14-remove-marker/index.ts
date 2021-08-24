@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker } from "leaflet";
+import { Map, tileLayer, marker, LayerGroup } from "leaflet";
 import { tileLayers } from "./../../constants/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 
@@ -11,17 +11,26 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-// Añadimos el marcador
-const markerSoraluzeStadium = marker([43.180930, -2.421315], {draggable: true}).addTo(map);
+// Añadimos la capa de los marcadores mediante un LayerGroup
+// https://leafletjs.com/reference-1.7.1.html#layergroup
+// Esto lo usamos para tenerlo más accesible para poner / quitar los contenidos
+const markersLayerGroup = new LayerGroup();
 
-const markerIpuruaStadium = marker([43.1817416,-2.4780567], {draggable: true}).addTo(map);
+// Añadimos el marcador
+const markerSoraluzeStadium = marker([43.180930, -2.421315], {draggable: true}).addTo(markersLayerGroup);
+
+const markerIpuruaStadium = marker([43.1817416,-2.4780567], {draggable: true}).addTo(markersLayerGroup);
+
+markersLayerGroup.addTo(map);
+
+// Podría ser lo mismo con "dragend"
+// Si queremos eliminar inddividualmente, podemos hacerlo desde la capa
+// markersLayerGroup o map, ya que se ha añadido a esta
+markerIpuruaStadium.on('moveend', () => map.removeLayer(markerIpuruaStadium));
+markerSoraluzeStadium.on('moveend', () => map.removeLayer(markerSoraluzeStadium));
 
 // Centrar el mapa teniendo en cuenta los dos marcadores
 map.fitBounds([
   [markerIpuruaStadium.getLatLng().lat, markerIpuruaStadium.getLatLng().lng], 
   [markerSoraluzeStadium.getLatLng().lat, markerSoraluzeStadium.getLatLng().lng]
 ]);
-
-// Podría ser lo mismo con "dragend"
-markerIpuruaStadium.on('moveend', () => map.removeLayer(markerIpuruaStadium));
-markerSoraluzeStadium.on('moveend', () => map.removeLayer(markerSoraluzeStadium));

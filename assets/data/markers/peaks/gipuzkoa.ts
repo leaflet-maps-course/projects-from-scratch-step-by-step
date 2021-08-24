@@ -1,4 +1,4 @@
-const gipuzkoaPeaks = [
+export const gipuzkoaPeaks = [
   {
     type: "node",
     id: 28400961,

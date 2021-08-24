@@ -1,4 +1,4 @@
-const nafarroaPeaks = [
+export const nafarroaPeaks = [
   {
     type: "node",
     id: 26862551,

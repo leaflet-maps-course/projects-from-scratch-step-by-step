@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker, LatLngTuple } from "leaflet";
+import { Map, tileLayer, marker, LatLngTuple, LayerGroup } from "leaflet";
 import { tileLayers } from "./../../constants/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
@@ -12,15 +12,23 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-// Añadimos el marcador
-const markerSoraluzeStadium = marker([43.18093, -2.421315]).addTo(map);
+// Añadimos la capa de los marcadores mediante un LayerGroup
+// https://leafletjs.com/reference-1.7.1.html#layergroup
+// Esto lo usamos para tenerlo más accesible para poner / quitar los contenidos
+const markersLayerGroup = new LayerGroup();
 
-const markerIpuruaStadium = marker([43.1817416, -2.4780567]).addTo(map);
+// Añadimos el marcador
+const markerSoraluzeStadium = marker([43.18093, -2.421315]).addTo(markersLayerGroup);
+
+const markerIpuruaStadium = marker([43.1817416, -2.4780567]).addTo(markersLayerGroup);
 
 // Cargando desde una variable con mil registros
 drinkWaterSoraluze.map((drinkWater) => {
-  marker([drinkWater.lat, drinkWater.lon]).addTo(map);
+  marker([drinkWater.lat, drinkWater.lon]).addTo(markersLayerGroup);
 });
+
+// Una vez que hemos incrustado los marcadores en la capa especifica para ello
+markersLayerGroup.addTo(map);
 
 // Centrar el mapa teniendo en cuenta los dos marcadores
 // Centrar el mapa teniendo en cuenta los dos marcadores 

@@ -1,4 +1,4 @@
-const bizkaiaPeaks = [
+export const bizkaiaPeaks = [
   {
     type: "node",
     id: 26862484,

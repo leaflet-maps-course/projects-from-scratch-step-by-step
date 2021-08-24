@@ -4,8 +4,8 @@
   "description": "Repositorio con los proyectos que vamos a ver en el curso",
   "main": "index.js",
   "scripts": {
-    "start:project:current": "npx parcel ./index.html --open",
-    "build:project:current": "npx parcel build index.html --public-url '.'"
+    "start": "npx parcel ./index.html --open",
+    "build": "npx parcel build index.html --public-url '.'"
   },
   "repository": {
     "type": "git",
@@ -27,9 +27,11 @@
   "dependencies": {
     "@types/leaflet": "1.7.4",
     "leaflet": "1.7.1",
+    "leaflet.markercluster": "^1.5.0",
     "parcel-bundler": "^1.12.5"
   },
   "devDependencies": {
+    "@types/leaflet.markercluster": "^1.4.5",
     "typescript": "^4.3.5"
   }
 }

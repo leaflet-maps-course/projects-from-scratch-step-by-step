@@ -1,4 +1,4 @@
-const arabaPeaks = [
+export const arabaPeaks = [
   {
     type: "node",
     id: 26862721,
