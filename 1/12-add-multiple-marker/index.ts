@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker, LatLngTuple, LayerGroup } from "leaflet";
+import { Map, tileLayer, marker, LayerGroup } from "leaflet";
 import { tileLayers } from "./../../constants/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
@@ -45,5 +45,7 @@ map.fitBounds([
     markerSoraluzeStadium.getLatLng().lat,
     markerSoraluzeStadium.getLatLng().lng,
   ],
-  ...drinkWaterSoraluze.map(value => [value.lat, value.lon] as LatLngTuple),
+  // Si nos da el error que number[] no es asignable a LatLngTuple
+  // Ponemos "as [number, number]"
+  ...drinkWaterSoraluze.map(value => [value.lat, value.lon] as [number, number]),
 ]);

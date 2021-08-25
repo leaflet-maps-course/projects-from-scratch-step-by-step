@@ -7,7 +7,6 @@ import {
     tileLayer,
     marker,
     LatLng,
-    LatLngTuple,
     markerClusterGroup,
   } from "leaflet";
   import 'leaflet.markercluster';
@@ -44,9 +43,9 @@ import {
   map.addLayer(markers);
   
   map.fitBounds([
-    ...gipuzkoaPeaks.map((location) => [location.lat, location.lon] as LatLngTuple),
-    ...bizkaiaPeaks.map((location) => [location.lat, location.lon] as LatLngTuple),
-    ...arabaPeaks.map((location) => [location.lat, location.lon] as LatLngTuple), 
-    ...nafarroaPeaks.map((location) => [location.lat, location.lon] as LatLngTuple)
+    ...gipuzkoaPeaks.map((location) => [location.lat, location.lon] as [number, number]),
+    ...bizkaiaPeaks.map((location) => [location.lat, location.lon] as [number, number]),
+    ...arabaPeaks.map((location) => [location.lat, location.lon] as [number, number]), 
+    ...nafarroaPeaks.map((location) => [location.lat, location.lon] as [number, number])
   ]);
   

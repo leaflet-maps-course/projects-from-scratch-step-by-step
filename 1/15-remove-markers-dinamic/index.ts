@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker, LatLngTuple, LayerGroup } from "leaflet";
+import { Map, tileLayer, marker, LayerGroup } from "leaflet";
 import { tileLayers } from "./../../constants/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
@@ -40,6 +40,6 @@ markersLayerGroup.addTo(map);
 // Formato
 // [ [lat, lng], [lat, lng], [lat, lng], [lat, lng]]
 map.fitBounds([
-    ...drinkWaterSoraluze.map((value) => [value.lat, value.lon] as LatLngTuple)
+    ...drinkWaterSoraluze.map((value) => [value.lat, value.lon] as [number, number])
 ]);
 

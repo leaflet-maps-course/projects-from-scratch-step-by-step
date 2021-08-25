@@ -44,5 +44,5 @@ map.fitBounds([
     markerSoraluzeStadium.getLatLng().lat,
     markerSoraluzeStadium.getLatLng().lng,
   ],
-  ...drinkWaterSoraluze.map(value => [value.lat, value.lon] as LatLngTuple),
+  ...drinkWaterSoraluze.map(value => [value.lat, value.lon] as [number, number]),
 ]);

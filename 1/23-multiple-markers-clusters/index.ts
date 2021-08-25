@@ -3,7 +3,6 @@ import {
   tileLayer,
   marker,
   LatLng,
-  LatLngTuple,
   MarkerClusterGroup,
 } from "leaflet";
 import "leaflet.markercluster";
@@ -41,5 +40,5 @@ for (let i = 0; i < addressPoints.length; i++) {
 
 markers.addTo(map);
 map.fitBounds([
-  ...addressPoints.map((location) => [location[0], location[1]] as LatLngTuple),
+  ...addressPoints.map((location) => [location[0], location[1]] as [number, number]),
 ]);

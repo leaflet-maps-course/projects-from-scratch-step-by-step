@@ -7,13 +7,7 @@
     "sourceMap": true,
     "allowJs": true,
     "lib": ["es6", "dom"],
-    "moduleResolution": "node",
-    "rootDir": "./",
-    "paths": {
-      "assets/*": [
-        "./assets/*"
-      ],
-    }
+    "moduleResolution": "node"
   },
   "exclude": [
     "node_modules",
