@@ -10,22 +10,33 @@ tileLayer(tileLayers.default, {
 
 
 // Dibujando líneas con Polyline. Se necesita un array con por lo menos dos localizaciones
-// Un elemento
-var latlngs: [number, number][] = [
+// mínimo para formar Un elemento de línea
+const lineOneItem: [number, number][] = [
   [43.175663, -2.412301],
-  [43.172156, -2.413997],
-  [43.173683, -2.409712]
+  [43.172156, -2.413997], // MINIMO HASTA AQUI
 ]; 
-// Dibujando líneas con + de un Polyline. Se necesita un array bidemensional con 2 posiciones
-// por elemento del punto del punto Ahora como es tridemensional la información
-// [number, number][][]
-var latlang: [number, number][][] = [
-    [[17.385044, 78.486671], [16.506174, 80.648015], [17.686816, 83.218482]],
-    [[13.082680, 80.270718], [12.971599, 77.594563],[15.828126, 78.037279]]
- ];
 
-var polylineItem = polyline(latlngs as [number, number][], {color: 'red', weight: 5, }).addTo(map);
+const lineTwoItem: [number, number][] = [
+  [43.181063, -2.420891],
+  [43.174981, -2.403418], // MINIMO HASTA AQUI
+]; 
 
-var secondPolylineItem = polyline(latlang as [number, number][][], {color: 'blue', weight: 5, }).addTo(map);
+const lineThreeItem: [number, number][] = [
+  [43.166945, -2.395520],
+  [43.166953, -2.403341], // MINIMO HASTA AQUI
+  [43.171572, -2.409777]
+]; 
+
+// Creamos los polylines a partir de las coordenadas especificadas
+const polylineItem = polyline(lineOneItem, {color: 'red', weight: 5, }).addTo(map);
+const polylineTwoItem = polyline(lineTwoItem, {color: 'blue', weight: 10, }).addTo(map);
+const polylineThreeItem = polyline(lineThreeItem, {color: 'green', weight: 3, }).addTo(map);
+
+
 // Hacemos zoom teniendo en cuenta los puntos del polyline
-map.fitBounds(polylineItem.getBounds());
+map.fitBounds([
+  
+  [polylineItem.getBounds().getCenter().lat, polylineItem.getBounds().getCenter().lng],
+  [polylineTwoItem.getBounds().getCenter().lat, polylineTwoItem.getBounds().getCenter().lng],
+  [polylineThreeItem.getBounds().getCenter().lat, polylineThreeItem.getBounds().getCenter().lng]
+]);

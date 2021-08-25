@@ -1,4 +1,3 @@
-console.log("Kaixo");
 
 // 1.- Abrir el ccontenido del fichero y convertirlo a un string
 const openGPXFile = new Promise((resolve, reject) => {
