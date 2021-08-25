@@ -14,7 +14,7 @@ import {
   import { tileLayers } from "../../constants/tile-layer";
   import { ATRIBUTION } from "../../constants/general";
 
-  function groupMarkers(data, markers) {
+  function groupMarkers(data: any, markers: any) {
     for (let i = 0; i < data.length; i++) {
       const location = data[i];
       const title = (location.tags.name) ? location.tags.name : 'No especificado';
