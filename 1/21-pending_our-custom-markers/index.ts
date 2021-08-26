@@ -5,7 +5,7 @@ import { ATRIBUTION } from "../../constants/general";
 const test = Icon.extend({
   options: {
       iconUrl: "https://vue2-leaflet.netlify.app/images/baseball-marker.png",
-      shadowUrl: 'leaf-shadow.png',
+      shadowUrl: "leaf-shadow.png",
       iconSize:     [38, 40],
       shadowSize:   [50, 64],
       iconAnchor:   [19, 40],
@@ -41,7 +41,7 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-const orangeIcon = new Icon({
+/*const orangeIcon = new Icon({
   iconUrl: "https://leafletjs.com/examples/custom-icons/leaf-orange.png",
   shadowUrl: "./default/leaf-shadow.png",
   iconSize: [50, 50], // size of the icon
@@ -50,7 +50,7 @@ const orangeIcon = new Icon({
   // half of width + height respect "iconSize"
   shadowAnchor: [4, 62], // the same for the shadow
   // popupAnchor: [0 - 76], // point from which the popup should open relative to the iconAnchor
-});
+});*/
 
 const redIcon = new Icon({
   iconUrl: "./custom/drink_water.png",

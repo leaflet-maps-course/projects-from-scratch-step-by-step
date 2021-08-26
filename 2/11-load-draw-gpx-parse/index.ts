@@ -19,8 +19,8 @@ function addPoints(gpxData: string) {
   // 3.- console.log(gpxData);
 
   // 4.- Parsear con GPX Parse
-  let gpx = new gpxParser();
-  gpx.parse(gpxData as any);
+  const gpx = new gpxParser();
+  gpx.parse(gpxData);
   // 5.- Analizar la información de gpx
   console.log(gpx);
   // 6.- Ahora que ya sabemos que la información del track está en "tracks[0]" lo analizamos
@@ -47,14 +47,14 @@ function initializeMap() {
 }
 
 // 10.- Dibujar en el mapa los puntos (en el siguiente proyecto)
-function drawTrack(trackPoints) {
+function drawTrack(trackPoints: Array<{lat: number, lon: number}>) {
   const mapLayout = initializeMap();
-  let coordinates = trackPoints.map((p) => [
-    p.lat.toFixed(5),
-    p.lon.toFixed(5),
+  const coordinates: [number, number][] = trackPoints.map((p) => [
+    +p.lat.toFixed(5),
+    +p.lon.toFixed(5),
   ]);
 
-  const polylineItem = polyline(coordinates, { weight: 5, color: "green" }).addTo(
+  const polylineItem = polyline(coordinates, { weight: 5, color: "green", lineJoin: "bevel" }).addTo(
     mapLayout
   );
 

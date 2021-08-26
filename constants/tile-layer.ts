@@ -1,7 +1,7 @@
-const thunderForestKey = 'apikey=dcf50cc5d36e405092768251d95d6848';
+const thunderForestKey = "apikey=dcf50cc5d36e405092768251d95d6848";
 export const tileLayers = {
-    default: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-    blackWhite: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+    default: "https://{s}.tile.osm.org/{z}/{x}/{y}.png",
+    blackWhite: "http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",
     thunderForest: {
         openCycleMap: `https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?${thunderForestKey}`,
         transport: `https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?${thunderForestKey}`,
@@ -14,6 +14,6 @@ export const tileLayers = {
         neighbourhood: `https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?${thunderForestKey}`,
         atlas: `https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?${thunderForestKey}`,
     },
-    wayMarkedTrails: 'https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',
-    hot: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
-}
+    wayMarkedTrails: "https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png",
+    hot: "http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+};

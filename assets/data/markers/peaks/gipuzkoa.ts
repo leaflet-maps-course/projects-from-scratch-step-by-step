@@ -9265,7 +9265,7 @@ export const gipuzkoaPeaks = [
       ele: "1508",
       name: "Aitzabal",
       natural: "peak",
-      note: 'La denominación que se debe utilizar en el campo "name" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo "official_name".',
+      note: "La denominación que se debe utilizar en el campo \"name\" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo \"official_name\".",
       official_name: "Aitxuri",
       source:
         "https://www.euskaltzaindia.eus/index.php?option=com_ecoeoda&task=lekuaIkusi&Itemid=471&lang=eu&kodea=100120",
@@ -9346,7 +9346,7 @@ export const gipuzkoaPeaks = [
       ele: "1548",
       name: "Aketegi",
       natural: "peak",
-      note: 'La denominación que se debe utilizar en el campo "name" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo "official_name".',
+      note: "La denominación que se debe utilizar en el campo \"name\" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo \"official_name\".",
       official_name: "Aketegi erpina",
       source:
         "https://www.euskaltzaindia.eus/index.php?option=com_ecoeoda&task=lekuaIkusi&Itemid=471&lang=eu&kodea=100120",
@@ -9362,7 +9362,7 @@ export const gipuzkoaPeaks = [
       ele: "1551",
       name: "Aitxuri",
       natural: "peak",
-      note: 'La denominación que se debe utilizar en el campo "name" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo "official_name".',
+      note: "La denominación que se debe utilizar en el campo \"name\" es la que aparece en la realidad física (buzones y señales), las denominaciones oficiales que no tengan tal utilización deben ir en el campo \"official_name\".",
       official_name: "Aketegi",
       source:
         "https://www.euskaltzaindia.eus/index.php?option=com_ecoeoda&task=lekuaIkusi&Itemid=471&lang=eu&kodea=100120",

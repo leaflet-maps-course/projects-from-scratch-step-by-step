@@ -28,9 +28,9 @@ const lineThreeItem: [number, number][] = [
 ]; 
 
 // Creamos los polylines a partir de las coordenadas especificadas
-const polylineItem = polyline(lineOneItem, {color: 'red', weight: 5, }).addTo(map);
-const polylineTwoItem = polyline(lineTwoItem, {color: 'blue', weight: 10, }).addTo(map);
-const polylineThreeItem = polyline(lineThreeItem, {color: 'green', weight: 3, }).addTo(map);
+const polylineItem = polyline(lineOneItem, {color: "red", weight: 5, }).addTo(map);
+const polylineTwoItem = polyline(lineTwoItem, {color: "blue", weight: 10, }).addTo(map);
+const polylineThreeItem = polyline(lineThreeItem, {color: "green", weight: 3, }).addTo(map);
 
 
 // Hacemos zoom teniendo en cuenta los puntos del polyline

@@ -16,17 +16,17 @@ const markersLayerGroup = new LayerGroup();
 
 // Añadiendo acción de borrado
 drinkWaterSoraluze.map((drinkWater) => {
-  const markerItem = marker([drinkWater.lat, drinkWater.lon], { draggable: true })
+  const markerItem = marker([drinkWater.lat, drinkWater.lon], { draggable: true });
   markerItem.addTo(markersLayerGroup);
   markerItem.on("moveend", () => {
     markersLayerGroup.removeLayer(markerItem);
-    console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`)
+    console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`);
   });
 
   markerItem.on("dblclick", () => {
     // Eliminamos la capa de los marcadores y desaparecen
     map.removeLayer(markersLayerGroup);
-    console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`)
+    console.log(`Eliminado marcador de la posición ${markerItem.getLatLng().toString()}`);
   });
 });
 

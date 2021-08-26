@@ -1,3 +1,3 @@
 const CUSTOM_ICON = {
-    'leafletGreen': 'assets/markers/default/leaf-green.png'
-}
+    "leafletGreen": "assets/markers/default/leaf-green.png"
+};

@@ -9,7 +9,7 @@ import {
   import { ATRIBUTION } from "../../constants/general";
 
   // Inicializamos el map en Soraluze (Gipuzkoa)
-const map = new Map('map').setView([43.1736976,-2.4173474 ], 13);
+const map = new Map("map").setView([43.1736976,-2.4173474 ], 13);
 // const map = L.map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
 tileLayer(tileLayers.default, {
   maxZoom: 17,
@@ -19,7 +19,7 @@ tileLayer(tileLayers.default, {
 // Initialize clicked
 let mapClicked = 0;
 
-map.on('click', function(e: {latlng: LatLng}){
+map.on("click", function(e: {latlng: LatLng}){
   mapClicked =+ 1;
   console.log(mapClicked);
   // Añadimos esto para esperar 0.25 sg y en el caso que se haya reseteado los clicks
@@ -37,7 +37,7 @@ map.on('click', function(e: {latlng: LatLng}){
      }, 250);
 });
 
-map.on('dblclick', (e: {latlng: LatLng}) => {
+map.on("dblclick", (e: {latlng: LatLng}) => {
   console.log(e);
   mapClicked = 0;
   const optionsCircle = { radius: 40, color: "#ff7800", weight: 3, stroke: true };

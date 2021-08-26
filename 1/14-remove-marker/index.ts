@@ -26,8 +26,8 @@ markersLayerGroup.addTo(map);
 // Podría ser lo mismo con "dragend"
 // Si queremos eliminar inddividualmente, podemos hacerlo desde la capa
 // markersLayerGroup o map, ya que se ha añadido a esta
-markerIpuruaStadium.on('moveend', () => map.removeLayer(markerIpuruaStadium));
-markerSoraluzeStadium.on('moveend', () => map.removeLayer(markerSoraluzeStadium));
+markerIpuruaStadium.on("moveend", () => map.removeLayer(markerIpuruaStadium));
+markerSoraluzeStadium.on("moveend", () => map.removeLayer(markerSoraluzeStadium));
 
 // Centrar el mapa teniendo en cuenta los dos marcadores
 map.fitBounds([

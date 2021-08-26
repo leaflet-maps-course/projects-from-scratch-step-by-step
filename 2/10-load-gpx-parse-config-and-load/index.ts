@@ -1,8 +1,8 @@
-import gpxParser from 'gpxparser';
-import axios from 'axios';
+import gpxParser from "gpxparser";
+import axios from "axios";
 
 
-axios.get('https://raw.githubusercontent.com/leaflet-maps-course/resources/main/track.gpx').then(
+axios.get("https://raw.githubusercontent.com/leaflet-maps-course/resources/main/track.gpx").then(
     (result) => addPoints(result.data)
 );
 
@@ -14,8 +14,8 @@ function addPoints(gpxData: string) {
     // 3.- console.log(gpxData);
   
     // 4.- Parsear con GPX Parse
-    let gpx = new gpxParser();
-    gpx.parse(gpxData as any);
+    const gpx = new gpxParser();
+    gpx.parse(gpxData);
     // 5.- Analizar la información de gpx
     console.log(gpx);
     // 6.- Ahora que ya sabemos que la información del track está en "tracks[0]" lo analizamos
@@ -23,13 +23,16 @@ function addPoints(gpxData: string) {
     // 7.- Cogemos los puntos para analizarlo
     const points = gpx.tracks[0].points;
     // 8.- Visualizamos los puntos
-    var paragraph = document.getElementById("points");
+    const paragraph = document.getElementById("points");
     points.map((point) => {
-      // console.log(point.lat, point.lon)
       
-      const text = document.createTextNode(`${point.lat}, ${point.lon}`);
+      const text = document.createTextNode(`${point.lat}, ${point.lon}`) || "";
   
-      paragraph.appendChild(text);
+      if (paragraph) {
+        paragraph.appendChild(text);
+      }
+      throw new Error("Specify correctrly to find 'points' element in index.html");
+      
     });
 } 
 

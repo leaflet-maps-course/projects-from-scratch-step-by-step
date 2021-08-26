@@ -1,4 +1,4 @@
-import { Map, tileLayer, marker, LatLngTuple, circleMarker } from "leaflet";
+import { Map, tileLayer, marker, circleMarker } from "leaflet";
 import { tileLayers } from "../../constants/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
@@ -17,8 +17,8 @@ const markerSoraluzeStadium = circleMarker([43.18093, -2.421315]).addTo(map);
 
 const markerIpuruaStadium = circleMarker([43.1817416, -2.4780567],{
   radius: 30,
-  color: 'red',       // Bordes
-  fillColor: 'yellow' // Color del relleno
+  color: "red",       // Bordes
+  fillColor: "yellow" // Color del relleno
 }).addTo(map);
 
 // Estadio Ipurua con marcador normal

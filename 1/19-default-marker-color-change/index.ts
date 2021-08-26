@@ -11,18 +11,18 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-var greenIcon = new Icon({
-  iconUrl: 'https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-2x-green.png?raw=true',
-  shadowUrl: 'https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true',
+const greenIcon = new Icon({
+  iconUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-2x-green.png?raw=true",
+  shadowUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
 
-var redIcon = new Icon({
-  iconUrl: 'https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-2x-red.png?raw=true',
-  shadowUrl: 'https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true',
+const redIcon = new Icon({
+  iconUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-2x-red.png?raw=true",
+  shadowUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],

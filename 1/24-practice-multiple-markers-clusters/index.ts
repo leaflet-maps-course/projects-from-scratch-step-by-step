@@ -1,23 +1,24 @@
-import { gipuzkoaPeaks } from './../../assets/data/markers/peaks/gipuzkoa';
-import { bizkaiaPeaks } from './../../assets/data/markers/peaks/bizkaia';
-import { nafarroaPeaks } from './../../assets/data/markers/peaks/nafarroa';
-import { arabaPeaks } from './../../assets/data/markers/peaks/araba';
+import { gipuzkoaPeaks } from "./../../assets/data/markers/peaks/gipuzkoa";
+import { bizkaiaPeaks } from "./../../assets/data/markers/peaks/bizkaia";
+import { nafarroaPeaks } from "./../../assets/data/markers/peaks/nafarroa";
+import { arabaPeaks } from "./../../assets/data/markers/peaks/araba";
 import {
     Map,
     tileLayer,
     marker,
     LatLng,
     markerClusterGroup,
+    MarkerClusterGroup,
   } from "leaflet";
-  import 'leaflet.markercluster';
+  import "leaflet.markercluster";
   import { tileLayers } from "../../constants/tile-layer";
   import { ATRIBUTION } from "../../constants/general";
 
-  function groupMarkers(data: any, markers: any) {
+  function groupMarkers(data: any, markers: MarkerClusterGroup) {
     for (let i = 0; i < data.length; i++) {
       const location = data[i];
-      const title = (location.tags.name) ? location.tags.name : 'No especificado';
-      const elevation = (location.tags.ele) ? ` (${location.tags.ele}m.)` : '';
+      const title = (location.tags.name) ? location.tags.name : "No especificado";
+      const elevation = (location.tags.ele) ? ` (${location.tags.ele}m.)` : "";
       const markerItem = marker(new LatLng(location.lat, location.lon), { title: title });
       markerItem.bindPopup(title.concat(elevation));
       markers.addLayer(markerItem);

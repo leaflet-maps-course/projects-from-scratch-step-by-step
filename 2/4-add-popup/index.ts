@@ -10,7 +10,7 @@ tileLayer(tileLayers.default, {
     
 }).addTo(map);
 
-const myMarker = marker([43.174110, -2.413746]).bindPopup('Gila zubia').addTo(map);
+const myMarker = marker([43.174110, -2.413746]).bindPopup("Gila zubia").addTo(map);
 
 // Abrir el popup
 myMarker.openPopup();
@@ -21,8 +21,8 @@ const polygon = polyline(
     [43.165409, -2.385702],
     [43.164378, -2.440947],
   ] as [number, number][],
-  { color: "red", weight: 3, fillColor:'blue',fillOpacity:0.1}
-).bindPopup('Hi There!').addTo(map);
+  { color: "red", weight: 3, fillColor:"blue",fillOpacity:0.1}
+).bindPopup("Hi There!").addTo(map);
 
 
 // Definimos el área geográfica del que va estar en el mapa
@@ -38,7 +38,7 @@ const rectangleOne = rectangle(bounds, { color: "#ff7800", weight: 1, stroke: tr
 // al crear el mapa
 
 const optionsCircle = { radius: 450, color: "red", weight: 3, stroke: true, fillColor: "blue" };
-const mainCircle = circle([43.18, -2.373474], optionsCircle).bindPopup('Zona de inundaciones').addTo(map);
+const mainCircle = circle([43.18, -2.373474], optionsCircle).bindPopup("Zona de inundaciones").addTo(map);
 mainCircle.openPopup(); // Para que aparezca abierto por defecto
 
 // Centramos teniendo en cuenta los elementos

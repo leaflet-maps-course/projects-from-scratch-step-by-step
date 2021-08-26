@@ -24,13 +24,13 @@ const cicleLayer = tileLayer(tileLayers.thunderForest.openCycleMap, {
 const trailRoutes = tileLayer(tileLayers.wayMarkedTrails).addTo(map);
 
 // Los mapas base
-var baseMaps = {
+const baseMaps = {
     "OSM": defaultLayer,
     "CicleMap": cicleLayer,
 };
 
 // Las superposiciones (capas transparentes)
-var overlayMaps = {
+const overlayMaps = {
     "Trail": trailRoutes
 };
 
@@ -42,6 +42,6 @@ var overlayMaps = {
 // https://leafletjs.com/reference-1.7.1.html#control-layers-l-control-layers
 // Añadimos el selector para trabajar con las diferentes capas / superposiciones
 control.layers(baseMaps, overlayMaps,{
-	position: 'topright', // 'topleft', 'bottomleft', 'bottomright'
+	position: "topright", // 'topleft', 'bottomleft', 'bottomright'
 	collapsed: true // false (con esto está a la vista todo)
 }).addTo(map);

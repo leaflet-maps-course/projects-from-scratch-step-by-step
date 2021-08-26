@@ -9,22 +9,6 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
-// Dibujando líneas con + de un Polyline. Se necesita un array bidemensional con 2 posiciones
-// por elemento del punto del punto Ahora como es tridemensional la información
-// [number, number][][]
-const multipolylineItem: [number, number][][] = [
-  [
-    [17.385044, 78.486671],
-    [16.506174, 80.648015],
-    [17.686816, 83.218482],
-  ],
-  [
-    [13.08268, 80.270718],
-    [12.971599, 77.594563],
-    [15.828126, 78.037279],
-  ],
-];
-
 // Dibujando líneas con Polyline mediante multipolyline. En este caso dibujamos + de una
 /// línea en un array tridimensional
 const polylineElements: [number, number][][] = [
@@ -49,7 +33,6 @@ const polylineElements: [number, number][][] = [
 const polylineItem = polyline(polylineElements, { color: "red", weight: 5 }).addTo(
   map
 );
-
 
 // Hacemos zoom teniendo en cuenta los puntos delmultipolyline, para que sea más 
 // exacto vamos a tener en cuenta la zona que ocupa y vamos a coger los puntos del
