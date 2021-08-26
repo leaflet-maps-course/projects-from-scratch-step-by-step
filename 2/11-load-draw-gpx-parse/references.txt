@@ -2,3 +2,6 @@ Referencias a tener en cuenta
 https://blog.aaronlenoir.com/2019/09/25/draw-gps-track-on-openstreetmap/
 GPX Parse:
 https://luuka.github.io/GPXParser.js/doc/index.html
+
+// Usaremos este track como ejemplo:
+https://raw.githubusercontent.com/leaflet-maps-course/resources/main/track.gpx
