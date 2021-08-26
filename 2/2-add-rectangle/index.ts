@@ -31,19 +31,12 @@ const rectangleOne = rectangle(bounds, {
 // al crear el mapa
 // Al estar con un rectángulo,
 // vamos a coger la zona que ocupa haciendo un rectangulo imaginario donde obtenemos
-// ñas ccoordenadas de arriba-izquierda, arriba-derecha, abajo-izquierda y abajo-derecha
+// las coordenadas de arriba-izquierda, arriba-derecha, abajo-izquierda y abajo-derecha
+// Con coger por ejemplo Norte-Este y Sur-Oeste, ya acota el rectángulo
 map.fitBounds([
   [
     rectangleOne.getBounds().getNorthEast().lat,
     rectangleOne.getBounds().getNorthEast().lng,
-  ],
-  [
-    rectangleOne.getBounds().getNorthWest().lat,
-    rectangleOne.getBounds().getNorthWest().lng,
-  ],
-  [
-    rectangleOne.getBounds().getSouthEast().lat,
-    rectangleOne.getBounds().getSouthEast().lng,
   ],
   [
     rectangleOne.getBounds().getSouthWest().lat,

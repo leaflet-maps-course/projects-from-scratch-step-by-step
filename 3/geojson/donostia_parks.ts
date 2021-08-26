@@ -1,4 +1,4 @@
-const ssParks = {
+export const ssParks = {
   type: "FeatureCollection",
   name: "Parkeak_lorategiak",
   features: [

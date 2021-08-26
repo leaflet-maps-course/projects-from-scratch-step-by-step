@@ -38,19 +38,12 @@ const polygonItem = polygon(
 // Al estar con un poligono, una figura que se cierra después de unir
 // vamos a coger la zona que ocupa haciendo un rectangulo imaginario donde obtenemos
 // ñas ccoordenadas de arriba-izquierda, arriba-derecha, abajo-izquierda y abajo-derecha
+// Con coger la esquina superior de un lado y la inferior del lado contrario, ya acota y
+// es suficiente
 map.fitBounds([
-  //addPolygonBounds(polygonItem)
   [
     polygonItem.getBounds().getNorthEast().lat,
     polygonItem.getBounds().getNorthEast().lng,
-  ],
-  [
-    polygonItem.getBounds().getNorthWest().lat,
-    polygonItem.getBounds().getNorthWest().lng,
-  ],
-  [
-    polygonItem.getBounds().getSouthEast().lat,
-    polygonItem.getBounds().getSouthEast().lng,
   ],
   [
     polygonItem.getBounds().getSouthWest().lat,

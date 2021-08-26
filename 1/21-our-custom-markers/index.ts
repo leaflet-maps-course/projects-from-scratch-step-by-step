@@ -53,10 +53,10 @@ tileLayer(tileLayers.default, {
 });*/
 
 const redIcon = new Icon({
-  iconUrl: "./custom/drink_water.png",
-  iconSize: [38, 95], // size of the icon
+  iconUrl: "https://raw.githubusercontent.com/leaflet-maps-course/resources/main/markers/icons/custom/drink_water.png",
+  iconSize: [46, 48], // size of the icon
   shadowSize: [50, 64], // size of the shadow
-  iconAnchor: [19, 95], // point of the icon which will correspond to marker's location
+  iconAnchor: [23, 48], // point of the icon which will correspond to marker's location
   // half of width + height respect "iconSize"
   shadowAnchor: [4, 62], // the same for the shadow
   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
@@ -64,6 +64,7 @@ const redIcon = new Icon({
 
 const redIconNew = new MyIcon({
   iconUrl: "https://vue2-leaflet.netlify.app/images/baseball-marker.png",
+  shadowUrl: "https://leafletjs.com/examples/custom-icons/leaf-shadow.png"
 });
 
 const markerGreen = marker([43.172286, -2.4117188], {

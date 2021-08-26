@@ -1,4 +1,4 @@
-const mexicoStatesGeoJSON = {
+export const mexicoStatesGeoJSON = {
   type: "FeatureCollection",
   name: "Mexico_Estados",
   crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },

@@ -2,7 +2,7 @@ import gpxParser from "gpxparser";
 import axios from "axios";
 
 
-axios.get("https://raw.githubusercontent.com/leaflet-maps-course/resources/main/track.gpx").then(
+axios.get("https://raw.githubusercontent.com/leaflet-maps-course/resources/main/tracks/track.gpx").then(
     (result) => addPoints(result.data)
 );
 
@@ -12,7 +12,7 @@ function addPoints(gpxData: string) {
     console.log("FICHERO GPX");
     console.log("==============");
     // 3.- console.log(gpxData);
-  
+    console.log(gpxData);
     // 4.- Parsear con GPX Parse
     const gpx = new gpxParser();
     gpx.parse(gpxData);
@@ -30,6 +30,7 @@ function addPoints(gpxData: string) {
   
       if (paragraph) {
         paragraph.appendChild(text);
+        return;
       }
       throw new Error("Specify correctrly to find 'points' element in index.html");
       

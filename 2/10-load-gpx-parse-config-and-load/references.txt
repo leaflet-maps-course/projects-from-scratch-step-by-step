@@ -4,4 +4,4 @@ GPX Parse:
 https://luuka.github.io/GPXParser.js/doc/index.html
 
 // Usaremos este track como ejemplo:
-https://raw.githubusercontent.com/leaflet-maps-course/resources/main/track.gpx
+https://raw.githubusercontent.com/leaflet-maps-course/resources/main/tracks/track.gpx

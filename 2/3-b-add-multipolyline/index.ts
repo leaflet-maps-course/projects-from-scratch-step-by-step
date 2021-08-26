@@ -34,14 +34,12 @@ const polylineItem = polyline(polylineElements, { color: "red", weight: 5 }).add
   map
 );
 
-// Hacemos zoom teniendo en cuenta los puntos delmultipolyline, para que sea más 
+// Hacemos zoom teniendo en cuenta los puntos del multipolyline, para que sea más 
 // exacto vamos a tener en cuenta la zona que ocupa y vamos a coger los puntos del
-// rectángulo que forman poniendo las coordenas NW, NE, SW, SE
+// rectángulo que forman poniendo las coordenas NW, NE, SW, SE.
+// Es suficiente con poner una esquina del norte y poner la contraria del sur
+// Por ejemplo, NE, SO
 map.fitBounds([
-  [
-    polylineItem.getBounds().getNorthWest().lat,
-    polylineItem.getBounds().getNorthWest().lng,
-  ],
   [
     polylineItem.getBounds().getNorthEast().lat,
     polylineItem.getBounds().getNorthEast().lng,
@@ -49,10 +47,5 @@ map.fitBounds([
   [
     polylineItem.getBounds().getSouthWest().lat,
     polylineItem.getBounds().getSouthWest().lng,
-  ],
-  [
-    polylineItem.getBounds().getSouthEast().lat,
-    polylineItem.getBounds().getSouthEast().lng,
-  ],
-
+  ]
 ]);

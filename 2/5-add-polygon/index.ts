@@ -31,21 +31,16 @@ const polygonItem = polygon(
 )
   .bindPopup("Estoy aquí!")
   .addTo(map);
+
 // Al estar con un poligono, una figura que se cierra después de unir
+// Hacemos zoom y centramos al área que que queremos movernos
 // vamos a coger la zona que ocupa haciendo un rectangulo imaginario donde obtenemos
-// ñas ccoordenadas de arriba-izquierda, arriba-derecha, abajo-izquierda y abajo-derecha
+// las coordenadas de arriba-izquierda, arriba-derecha, abajo-izquierda y abajo-derecha
+// Con coger por ejemplo Norte-Este y Sur-Oeste, ya acota el rectángulo
 map.fitBounds([
   [
     polygonItem.getBounds().getNorthEast().lat,
     polygonItem.getBounds().getNorthEast().lng,
-  ],
-  [
-    polygonItem.getBounds().getNorthWest().lat,
-    polygonItem.getBounds().getNorthWest().lng,
-  ],
-  [
-    polygonItem.getBounds().getSouthEast().lat,
-    polygonItem.getBounds().getSouthEast().lng,
   ],
   [
     polygonItem.getBounds().getSouthWest().lat,
