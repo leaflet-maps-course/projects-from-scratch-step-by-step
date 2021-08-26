@@ -10,6 +10,8 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
+// Documentación asociada:
+// https://leafletjs.com/reference-1.7.1.html#icon
 const divIconDrinkWater = divIcon({
   className: "custom-div-icon",
   html: "<div class='marker-pin blue'></div><i class=\"fas fa-faucet\"></i>",

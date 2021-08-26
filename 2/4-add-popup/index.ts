@@ -15,7 +15,7 @@ const myMarker = marker([43.174110, -2.413746]).bindPopup("Gila zubia").addTo(ma
 // Abrir el popup
 myMarker.openPopup();
 
-const polygon = polyline(
+const polylineItem = polyline(
   [
     [43.197199, -2.417625],
     [43.165409, -2.385702],
@@ -41,11 +41,22 @@ const optionsCircle = { radius: 450, color: "red", weight: 3, stroke: true, fill
 const mainCircle = circle([43.18, -2.373474], optionsCircle).bindPopup("Zona de inundaciones").addTo(map);
 mainCircle.openPopup(); // Para que aparezca abierto por defecto
 
-// Centramos teniendo en cuenta los elementos
+// Centramos teniendo en cuenta los elementos (Primero hacerlo asi, para ver que es incorrecto)
 map.fitBounds([
-    [polygon.getBounds().getCenter().lat,  polygon.getBounds().getCenter().lng],
+    [polylineItem.getBounds().getCenter().lat,  polylineItem.getBounds().getCenter().lng],
     [rectangleOne.getBounds().getCenter().lat,  rectangleOne.getBounds().getCenter().lng],
     [mainCircle.getBounds().getCenter().lat, mainCircle.getBounds().getCenter().lng ],
+]);
+
+// Mejorando la ubicación
+// Esto se puede mejorar cogiendo el punto izquierdo abajo más lejano y el superior 
+// más lejano a la derecha. 
+// Cogemos el polyline, en el Sur-Oeste con su latitud y longitud
+// El rectangulo, al ser el elemento que va más lejos a la derecha (y altura)
+// Cogemos el punto del Norte-Este
+map.fitBounds([
+  [polylineItem.getBounds().getSouthWest().lat,  polylineItem.getBounds().getSouthWest().lng],
+  [rectangleOne.getBounds().getNorthEast().lat,  rectangleOne.getBounds().getNorthEast().lng]
 ]);
 
 // Con openPopup solo podemos tener un popup abierto

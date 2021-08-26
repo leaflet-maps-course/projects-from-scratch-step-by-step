@@ -62,21 +62,12 @@ const polygonItem = polygon(
   .bindPopup("Hi There!")
   .addTo(map);
 
-map.fitBounds([
-  [
-    rectangleOne.getBounds().getCenter().lat,
-    rectangleOne.getBounds().getCenter().lng,
-  ],
-  [
-    mainCircle.getBounds().getCenter().lat,
-    mainCircle.getBounds().getCenter().lng,
-  ],
-  [
-    polygonItem.getBounds().getCenter().lat,
-    polygonItem.getBounds().getCenter().lng,
-  ],
-  [myMarker.getLatLng().lat, myMarker.getLatLng().lng],
-]);
+  // En este caso, hacemos ya "centrarlo" en base al cuadrado de la zona que ocupa
+  // teniendo en cuenta los puntos más lejanos
+  map.fitBounds([
+    [polygonItem.getBounds().getSouthWest().lat,  polygonItem.getBounds().getSouthWest().lng],
+    [rectangleOne.getBounds().getNorthEast().lat,  rectangleOne.getBounds().getNorthEast().lng]
+  ]);
 
 // Con openPopup solo podemos tener un popup abierto
 

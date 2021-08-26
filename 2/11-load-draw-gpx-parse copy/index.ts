@@ -1,4 +1,4 @@
-import { ATRIBUTION } from "./../../constants/general";
+import { ATRIBUTION } from "../../constants/general";
 import { tileLayers } from "../../constants/tile-layer";
 import gpxParser from "gpxparser";
 import axios from "axios";

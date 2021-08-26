@@ -8,8 +8,11 @@ import {
   import { tileLayers } from "../../constants/tile-layer";
   import { ATRIBUTION } from "../../constants/general";
 
+  // Para usar una ubicación fake, en Chrome, tres puntos verticales en herramientas
+  // de desarrollador => More tools / Sensors y ahí tenemos diferentes ubiacaciones
+
   // Inicializamos el map en Soraluze (Gipuzkoa)
-const map = new Map("map").setView([43.1736976,-2.4173474 ], 13);
+const map = new Map("map").setView([43.1736976,-2.4173474 ], 10);
 // const map = L.map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
 tileLayer(tileLayers.default, {
   maxZoom: 17,
@@ -21,7 +24,7 @@ function onLocationFound(e: {latlng: LatLng, accuracy: number}) {
   circle(e.latlng, radius).addTo(map);
   marker(e.latlng).addTo(map)
   .bindPopup("Estás dentro del radio de " + radius + " metros mostrado").openPopup();
-  map.flyTo(e.latlng, 16, {
+  map.flyTo(e.latlng, 8, {
     // https://leafletjs.com/reference-1.7.1.html#zoom-options
     animate: true,
     duration: 2.5,

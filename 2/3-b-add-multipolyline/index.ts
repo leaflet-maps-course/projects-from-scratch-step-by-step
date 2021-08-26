@@ -11,6 +11,8 @@ tileLayer(tileLayers.default, {
 
 // Dibujando líneas con Polyline mediante multipolyline. En este caso dibujamos + de una
 /// línea en un array tridimensional
+// Esto se usa, por si queremos pintar lineas con las mismas caracteristicas y asi hacerlo todo
+// en un polyline
 const polylineElements: [number, number][][] = [
   [
     [43.175663, -2.412301],

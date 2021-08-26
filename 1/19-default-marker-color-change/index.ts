@@ -11,6 +11,8 @@ tileLayer(tileLayers.default, {
   attribution: ATRIBUTION,
 }).addTo(map);
 
+// Las características del icono
+// https://leafletjs.com/reference-1.7.1.html#icon
 const greenIcon = new Icon({
   iconUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-2x-green.png?raw=true",
   shadowUrl: "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
