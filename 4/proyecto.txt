@@ -1,0 +1,7 @@
+Información para hacer el proyecto
+https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes
+Ir a "Latest earthquakes"
+Ir a herramientas de desarrollador
+Mirar en las peticiones y coger la url con la extensión GeoJSON
+API:
+https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson
