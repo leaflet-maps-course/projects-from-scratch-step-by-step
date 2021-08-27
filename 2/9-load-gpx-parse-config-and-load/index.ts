@@ -28,7 +28,7 @@ function addPoints(gpxData: string) {
       
       const text = document.createTextNode(`${point.lat}, ${point.lon}`) || "";
   
-      if (paragraph) {
+      if (paragraph && text) {
         paragraph.appendChild(text);
         return;
       }
