@@ -1,6 +1,15 @@
-Leaflet UI:
-https://www.npmjs.com/package/leaflet-ui
-npm i leaflet-ui
-Leaflet Elevation:
-https://www.npmjs.com/package/@raruto/leaflet-elevation
-npm i @raruto/leaflet-elevation
+Lista de Plugins
+https://leafletjs.com/plugins.html
+Print/export - Imprimir exportar
+1.- BrowserPrint
+
+2.- Otros plugins para imprimir / exportar
+Mostrar los ejemplos con demos
+
+3.- GeoSearch
+https://smeijer.github.io/leaflet-geosearch/
+Repositorio
+https://github.com/smeijer/leaflet-geosearch
+npm install leaflet-geosearch
+// Info de las propiedades del control de búsqueda
+https://smeijer.github.io/leaflet-geosearch/leaflet-control#properties

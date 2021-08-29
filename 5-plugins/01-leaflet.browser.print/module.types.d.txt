@@ -10,4 +10,4 @@ declare module "leaflet" {
   }
 }
 
-// Esto a mano a @types/leaflet.browser.print
+// Esto a mano referenciando o añadiarlo en @types/leaflet.browser.print/index.d.ts

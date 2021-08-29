@@ -3,7 +3,7 @@ import { Control, DomEvent, DomUtil, Map, marker } from "leaflet";
 
 const watermark = Control.extend({
   options: {
-    position: "bottomleft",
+    position: "topleft",
   },
   onAdd: function (_: Map) {
     const img = DomUtil.create("img");
@@ -40,7 +40,7 @@ const customControl = Control.extend({
     container.type = "button";
     container.title = "Obtener coordenadas centrales";
     // container.value = "Label del botón";
-    container.style.backgroundColor = "white";
+    container.style.backgroundColor = "yellow";
     // Para poner una imagen en vez de texto
     container.style.backgroundImage =
       "url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png)";
@@ -52,10 +52,9 @@ const customControl = Control.extend({
 
     // Esto es equivalente a hacer container.contextmenu...
     DomEvent.on(container, "contextmenu", (e) => DomEvent.stopPropagation(e));
-
     container.onmouseover = () => (container.style.backgroundColor = "grey");
 
-    container.onmouseout = () => (container.style.backgroundColor = "white");
+    container.onmouseout = () => (container.style.backgroundColor = "yellow");
 
     container.onclick = () => {
       const markerItem = marker([map.getCenter().lat, map.getCenter().lng]);

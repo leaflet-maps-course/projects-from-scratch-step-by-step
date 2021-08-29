@@ -31,6 +31,7 @@ drinkWaterSoraluze.map((drinkWater) => {
 });
 
 markersLayerGroup.addTo(map);
+
 // Centrar el mapa teniendo en cuenta los dos marcadores
 // Recordad que hay que almacenar en un array bidimensional, donde los arrays
 // numéricos son dos elementos, latitud y longitud

@@ -24,7 +24,7 @@ function getColor(d: string) {
     : "#FFEDA0";
 }
 
-function style(feature) {
+function style(feature: any) {
   console.log(feature);
   return {
     fillColor: getColor(feature.properties.CODIGO),
@@ -36,7 +36,7 @@ function style(feature) {
   };
 }
 
-function bindPopup(feature, layer) {
+function bindPopup(feature: any, layer: any) {
   layer.bindPopup(
     "<h1>" +
       feature.properties.CODIGO +
