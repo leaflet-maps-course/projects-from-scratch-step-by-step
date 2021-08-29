@@ -4,6 +4,7 @@
     "module": "commonjs",
     "jsx": "preserve",
     "esModuleInterop": true,
+    "declaration": true,
     "sourceMap": true,
     "allowJs": true,
     "lib": ["es6", "dom"],
