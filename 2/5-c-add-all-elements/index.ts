@@ -7,7 +7,7 @@ import {
   rectangle,
   marker,
 } from "leaflet";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 16 });

@@ -6,11 +6,11 @@ const watermark = Control.extend({
     position: "topleft",
   },
   onAdd: function (_: Map) {
+    // Selector
     const img = DomUtil.create("img");
     img.src =
       "https://raw.githubusercontent.com/leaflet-maps-course/resources/main/logotypes/am.png";
     img.style.width = "50px";
-    // img.style.marginLeft = "50px";
     return img;
   },
 });

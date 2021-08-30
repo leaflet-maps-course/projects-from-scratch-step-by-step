@@ -3,7 +3,7 @@ import { ssParks } from "./../geojson/donostia_parks";
 import { GeoJsonObject } from "geojson";
 import { geoJSON, Map, tileLayer } from "leaflet";
 import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 
 function bindPopup(feature, layer) {
   layer.bindPopup(

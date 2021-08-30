@@ -5,7 +5,7 @@ import {
     marker,
     LatLng,
   } from "leaflet";
-  import { tileLayers } from "../../constants/tile-layer";
+  import { tileLayers } from "../../config/tile-layer";
   import { ATRIBUTION } from "../../constants/general";
 
   // Para usar una ubicación fake, en Chrome, tres puntos verticales en herramientas

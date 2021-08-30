@@ -1,13 +1,9 @@
-import { tileLayers } from "./../../constants/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
-import { Map, tileLayer } from "leaflet";
+import { tileLayers, tileLayerSelect } from "./../../config/tile-layer";
+import { Map } from "leaflet";
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 11 });
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.default).addTo(map);
 
 /*L.tileLayer('https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=dcf50cc5d36e405092768251d95d6848', {
 	maxZoom: 17,

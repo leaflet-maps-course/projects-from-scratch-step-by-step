@@ -1,5 +1,5 @@
 import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import gpxParser from "gpxparser";
 import axios from "axios";
 import { tileLayer, Map, polyline } from "leaflet";

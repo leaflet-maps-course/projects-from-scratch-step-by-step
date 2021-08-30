@@ -11,7 +11,7 @@ import {
     MarkerClusterGroup,
   } from "leaflet";
   import "leaflet.markercluster";
-  import { tileLayers } from "../../constants/tile-layer";
+  import { tileLayers } from "../../config/tile-layer";
   import { ATRIBUTION } from "../../constants/general";
 
   function groupMarkers(data: any, markers: MarkerClusterGroup) {

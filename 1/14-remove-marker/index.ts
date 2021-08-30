@@ -1,5 +1,5 @@
 import { Map, tileLayer, marker, LayerGroup } from "leaflet";
-import { tileLayers } from "./../../constants/tile-layer";
+import { tileLayers } from "./../../config/tile-layer";
 import { ATRIBUTION } from "./../../constants/general";
 
 // Inicializamos el mapa en el centro especificado

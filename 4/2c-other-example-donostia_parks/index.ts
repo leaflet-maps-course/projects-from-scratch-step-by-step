@@ -1,6 +1,6 @@
 import { GeoJsonObject } from "geojson";
 import { geoJSON, Map, tileLayer } from "leaflet";
-import { tileLayers } from "./../../constants/tile-layer";
+import { tileLayers } from "./../../config/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 import { ssParks } from "../geojson/donostia_parks";
 

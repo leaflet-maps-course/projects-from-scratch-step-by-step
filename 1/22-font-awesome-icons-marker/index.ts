@@ -1,5 +1,5 @@
 import { Map, tileLayer, marker, divIcon } from "leaflet";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 // Inicializamos el mapa en el centro especificado
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });

@@ -1,5 +1,5 @@
 import { Map, tileLayer, polygon } from "leaflet";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 
 const map = new Map("map", {

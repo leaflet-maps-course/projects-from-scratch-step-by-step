@@ -1,6 +1,6 @@
 /// <reference path="../../custom_typings/leaflet.plugins/index.d.ts"/>
 // Arriba tenemos el fichero para "tipar" el uso de browserprint
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import { ATRIBUTION } from "../../constants/general";
 import { control, LayerGroup, Map, marker, tileLayer } from "leaflet";
 

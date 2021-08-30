@@ -1,7 +1,7 @@
 import axios from "axios";
 import { geoJSON, Map, tileLayer, circleMarker } from "leaflet";
 import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 
 // Para personalizar las zonas con diferentes colores
 function getColor(numberValue: number) {

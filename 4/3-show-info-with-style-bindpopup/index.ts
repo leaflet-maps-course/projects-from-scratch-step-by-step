@@ -1,7 +1,7 @@
 import { GeoJsonObject } from "geojson";
 import { geoJSON, Map, tileLayer } from "leaflet";
 import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../constants/tile-layer";
+import { tileLayers } from "../../config/tile-layer";
 import { mexicoStatesGeoJSON } from "../geojson/mexico_estados_geojson";
 
 // Para personalizar las zonas con diferentes colores
