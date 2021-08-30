@@ -1,0 +1,6 @@
+Ir a Font Awesome
+Usar los iconos para hacer marcadores.
+Añadir el script para poder usar las fuentes de iconos.
+Añadir fichero auxiliar CSS, especificar los estilos en el CSS
+=========
+Implementar los iconos con div icon (iconos de capas)

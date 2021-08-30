@@ -25,6 +25,6 @@
 }
 
 /* Para que las imágenes del popup se ajusten al ancho y se vean bien*/
-.leaflet-popup-content img {
+.leaflet-popup-content img, .leaflet-tooltip-pane img{
     width: 100%;
 }

@@ -1,0 +1,3 @@
+1.- Descargar los ficheros CSS desde la libreria
+2.- Instalar las dependencias
+3.- Coger una fuente de datos con 1000 o más marcadores

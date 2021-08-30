@@ -1,13 +1,10 @@
-import { Map, tileLayer, circle } from "leaflet";
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
+import { Map, circle } from "leaflet";
+import { tileLayers, tileLayerSelect } from "./../../config/tile-layer";
 
-const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution:
-    ATRIBUTION
-}).addTo(map);
+const map = new Map("map", { center: [43.1998468 , -2.2865083], zoom: 17 });
+
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
+
 
 // + info:
 // https://leafletjs.com/reference-1.7.1.html#circle
@@ -20,7 +17,9 @@ tileLayer(tileLayers.default, {
  * weight: Ancho del borde
  */
 const optionsCircle = { radius: 20, color: "#ff7800", weight: 3, stroke: true };
-const mainCircle = circle([43.1998468 , -2.2865083], optionsCircle).addTo(map);
-map.fitBounds([
-	[mainCircle.getBounds().getCenter().lat, mainCircle.getBounds().getCenter().lng]
-]);
+circle([43.1998468 , -2.2865083], optionsCircle)
+.bindTooltip("Xoxote (912m)", {
+  direction: 'top'
+}).addTo(map);
+
+
