@@ -1,5 +1,5 @@
 import { Map, marker, LayerGroup } from "leaflet";
-import { tileLayers, tileLayerSelect } from "./../../config/tile-layer";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
 
 // Inicializamos el mapa en el centro especificado

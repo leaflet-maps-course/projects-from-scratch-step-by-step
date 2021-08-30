@@ -1,15 +1,12 @@
-import { Map, tileLayer, marker } from "leaflet";
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
+import { Map, marker } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 // Inicializamos el mapa en el centro especificado
 const map =new Map("map", { center: [43.1736976, -2.4173474], zoom: 18 });
 
 // Añadimos la capa base
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
+
 
 // Añadimos el marcador
 const markerSoraluzeStadium = marker([43.180930, -2.421315]).bindPopup(

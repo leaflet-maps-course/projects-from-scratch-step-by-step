@@ -1,15 +1,11 @@
-import { Map, tileLayer, marker, LayerGroup } from "leaflet";
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
+import { Map, marker, LayerGroup } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 // Inicializamos el mapa en el centro especificado
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
 
 // Añadimos la capa base
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
 
 // Añadimos la capa de los marcadores mediante un LayerGroup
 // https://leafletjs.com/reference-1.7.1.html#layergroup

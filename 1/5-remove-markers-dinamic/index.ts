@@ -1,16 +1,12 @@
-import { Map, tileLayer, marker, LayerGroup } from "leaflet";
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
+import { Map, marker, LayerGroup } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
 
 // Inicializamos el mapa en el centro especificado
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 16 });
 
 // Añadimos la capa base
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
 
 const markersLayerGroup = new LayerGroup();
 

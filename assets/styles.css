@@ -23,3 +23,8 @@
     text-align: center;
     background-color: white;
 }
+
+/* Para que las imágenes del popup se ajusten al ancho y se vean bien*/
+.leaflet-popup-content img {
+    width: 100%;
+}
