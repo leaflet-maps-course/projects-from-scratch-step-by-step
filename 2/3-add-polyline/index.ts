@@ -1,12 +1,8 @@
-import { Map, tileLayer, polyline } from "leaflet";
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
+import { Map, polyline } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.stadiaOutdoors).addTo(map);
 
 
 // Dibujando líneas con Polyline. Se necesita un array con por lo menos dos localizaciones
@@ -33,10 +29,9 @@ const polylineTwoItem = polyline(lineTwoItem, {color: "blue", weight: 10, }).add
 const polylineThreeItem = polyline(lineThreeItem, {color: "green", weight: 3, }).addTo(map);
 
 
-// Hacemos zoom teniendo en cuenta los puntos del polyline
+// Hacemos zoom teniendo en cuenta los puntos del polyline, nos fijamos en los límites
+// para no tener que añadir todos a la hora de centrar
 map.fitBounds([
-  
-  [polylineItem.getBounds().getCenter().lat, polylineItem.getBounds().getCenter().lng],
-  [polylineTwoItem.getBounds().getCenter().lat, polylineTwoItem.getBounds().getCenter().lng],
-  [polylineThreeItem.getBounds().getCenter().lat, polylineThreeItem.getBounds().getCenter().lng]
+  [polylineTwoItem.getBounds().getNorthWest().lat, polylineTwoItem.getBounds().getNorthWest().lng],
+  [polylineThreeItem.getBounds().getSouthEast().lat, polylineThreeItem.getBounds().getSouthEast().lng]
 ]);
