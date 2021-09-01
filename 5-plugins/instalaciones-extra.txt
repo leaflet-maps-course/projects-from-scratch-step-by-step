@@ -3,13 +3,42 @@ https://leafletjs.com/plugins.html
 Print/export - Imprimir exportar
 1.- BrowserPrint
 
-2.- Otros plugins para imprimir / exportar
+1-B.- Otros plugins para imprimir / exportar
 Mostrar los ejemplos con demos
 
-3.- GeoSearch
+2.- GeoSearch
 https://smeijer.github.io/leaflet-geosearch/
 Repositorio
 https://github.com/smeijer/leaflet-geosearch
 npm install leaflet-geosearch
 // Info de las propiedades del control de búsqueda
 https://smeijer.github.io/leaflet-geosearch/leaflet-control#properties
+
+3.- Leaflet Curve, para crear una curva de transición entre dos rutas
+Normalmente se usa en transiciones de vuelos o viajes
+https://www.npmjs.com/package/leaflet-curve
+npm i leaflet-curve
+Ejemplo:
+https://stackoverflow.com/a/53507336
+Artículo medium explicando como hacer la curva en un punto intermedio:
+https://ryancatalani.medium.com/creating-consistently-curved-lines-on-leaflet-b59bc03fa9dc
+
+4.- Leaflet Heatmap
+Para añadir los mapas de calor
+https://www.npmjs.com/package/leaflet.heat
+npm i leaflet.heat
+Añadimos los types
+https://www.npmjs.com/package/@types/leaflet.heat
+import 'leaflet.heat'
+
+5.- Leaflet Ant Path
+Para añadir línea personalizadas y en movimiento, como si estuvieran hormigas
+npm install leaflet-ant-path --save
+Soporte para polyline, polygon, curve, circle, rectangle
+https://rubenspgcavalcante.github.io/leaflet-ant-path/documentation#including-installing
+
+6.- Leaflet path drag
+Para poder arrastrar también polylines y polygons
+https://www.npmjs.com/package/leaflet-path-drag
+
+
