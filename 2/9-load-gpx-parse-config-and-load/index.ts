@@ -1,7 +1,7 @@
 import gpxParser from "gpxparser";
 import axios from "axios";
 
-
+// Carga del fichero
 axios.get("https://raw.githubusercontent.com/leaflet-maps-course/resources/main/tracks/track.gpx").then(
     (result) => addPoints(result.data)
 );
@@ -32,7 +32,7 @@ function addPoints(gpxData: string) {
         paragraph.appendChild(text);
         return;
       }
-      throw new Error("Specify correctrly to find 'points' element in index.html");
+      throw new Error("Specify correctly to find 'points' element in index.html");
       
     });
 } 

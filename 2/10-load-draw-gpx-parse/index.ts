@@ -1,8 +1,7 @@
-import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../config/tile-layer";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 import gpxParser from "gpxparser";
 import axios from "axios";
-import { tileLayer, Map, polyline } from "leaflet";
+import { Map, polyline } from "leaflet";
 
 // 1.- Abrir el contenido del fichero y enviarlo como string
 axios
@@ -39,10 +38,7 @@ function initializeMap() {
     zoom: 15,
   });
 
-  tileLayer(tileLayers.hot, {
-    maxZoom: 20,
-    attribution: ATRIBUTION,
-  }).addTo(mapLayout);
+  tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(mapLayout);
   return mapLayout;
 }
 

@@ -1,20 +1,22 @@
 import {
   Map,
-  tileLayer,
   polygon,
   polyline,
   circle,
   rectangle,
   marker,
 } from "leaflet";
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
+
+/**
+ * Tanto en el multipolygon como multipolyline, trabajamos con arrays tridimensionales
+ * con la siguiente estructura: [number, number][][].
+ * Si no usamos el multi, es decir polyline y polygon, será bidimensional
+ * con esta estructura [number, number][]
+ */
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 16 });
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.thunderForest.atlas).addTo(map);
 
 // Marcador
 const myMarker = marker([43.17411, -2.413746])
@@ -59,7 +61,7 @@ const polygonItem = polygon(
   ],
   { color: "red", weight: 3, fillColor: "blue", fillOpacity: 0.1 }
 )
-  .bindPopup("Hi There!")
+  .bindPopup("Soy un triangulo :)")
   .addTo(map);
 
   // En este caso, hacemos ya "centrarlo" en base al cuadrado de la zona que ocupa

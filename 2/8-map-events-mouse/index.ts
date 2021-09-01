@@ -1,10 +1,8 @@
 import {
   Map,
-  tileLayer,
   DomEvent,
 } from "leaflet";
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 15 });
 // https://leafletjs.com/reference-1.7.1.html#map-mousedown
@@ -20,7 +18,4 @@ map.on("mouseover", (e) => console.log(e));
 // Cuando sale el cursor del mapa
 map.on("mouseout", (e) => console.log(e));
 
-tileLayer(tileLayers.hot, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
