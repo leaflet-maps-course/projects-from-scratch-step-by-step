@@ -1,5 +1,5 @@
 import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
-import { curve, Map } from "leaflet";
+import { curve, Map, marker } from "leaflet";
 import "@elfalem/leaflet-curve";
 
 const map = new Map("map", {
@@ -42,15 +42,27 @@ var curvedPath = curve(
     "M",
     [50.54136296522163, 28.520507812500004],
     "C",
-    [52.214338608258224, 28.564453125000004],
+    
     [48.45835188280866, 33.57421875000001],
+    [50.54136296522163, 28.520507812500004],
     [50.680797145321655, 33.83789062500001],
-    "V",
+    
+    /*"V",
     [48.40003249610685],
     "L",
     [47.45839225859763, 31.201171875],
     [48.40003249610685, 28.564453125000004],
-    "Z",
+    "Z",*/
   ],
-  { color: "red", fill: true }
+  { color: "green", fill: true, fillOpacity: 0 }
 ).addTo(map);
+
+
+const markersPoints: [number, number][] = [[50.54136296522163, 28.520507812500004],
+[52.214338608258224, 28.564453125000004],
+    [48.45835188280866, 33.57421875000001],
+    [50.680797145321655, 33.83789062500001]];
+
+markersPoints.map((location) => {
+  marker(location).bindPopup(location.toString()).addTo(map)
+})
