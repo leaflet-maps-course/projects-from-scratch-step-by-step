@@ -48,4 +48,8 @@ que lo reconozca
 Para poder arrastrar también polylines y polygons
 https://www.npmjs.com/package/leaflet-path-drag
 
+import 'leaflet-path-drag/dist/L.Path.Drag'
+
+Hay que añadir las formas en typings para poder usar la propiedad "draggable"
+
 

@@ -1,7 +1,7 @@
 /// <reference path="../../custom_typings/leaflet.plugins/index.d.ts"/>
 // Arriba tenemos el fichero para "tipar" el uso de browserprint
 import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
-import { control, LayerGroup, Map, marker, tileLayer } from "leaflet";
+import { control, LayerGroup, Map, marker } from "leaflet";
 
 import 'leaflet.browser.print/dist/leaflet.browser.print.min';
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
