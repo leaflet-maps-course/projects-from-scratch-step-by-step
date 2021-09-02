@@ -37,7 +37,14 @@ npm install leaflet-ant-path --save
 Soporte para polyline, polygon, curve, circle, rectangle
 https://rubenspgcavalcante.github.io/leaflet-ant-path/documentation#including-installing
 
-6.- Leaflet path drag
+6.- Leaflet KML
+Para poder cargar ficheros KML y pintarlos en el mapa
+https://github.com/windycom/leaflet-kml
+https://npmjs.com/leaflet-kml
+Hay que amoldar el fichero typings con la clase KML, constructor y función getBounds para
+que lo reconozca
+
+7.- Leaflet path drag
 Para poder arrastrar también polylines y polygons
 https://www.npmjs.com/package/leaflet-path-drag
 

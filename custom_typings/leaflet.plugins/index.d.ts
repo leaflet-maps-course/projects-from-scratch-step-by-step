@@ -8,4 +8,9 @@ declare module "leaflet" {
       addTo(map: L.Map): any;
     }
   }
+
+  class KML {
+    constructor(options: any);
+    getBounds(): any
+  }
 }
