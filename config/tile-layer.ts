@@ -1,17 +1,17 @@
 import { ATRIBUTION } from "./attribution";
 import { tileLayer } from "leaflet";
 
-export interface ITileLayerOptions  {
+export interface ITileLayerOptions {
   minZoom?: number;
   maxZoom?: number;
-  subdomains?: string| string[];
-  errorTileUrl?: string;	
+  subdomains?: string | string[];
+  errorTileUrl?: string;
   zoomOffset?: number;
   tms?: boolean;
-  zoomReverse?: boolean;	
-  detectRetina?: boolean;	
-  crossOrigin?: boolean| string;	
-  attribution?: string
+  zoomReverse?: boolean;
+  detectRetina?: boolean;
+  crossOrigin?: boolean | string;
+  attribution?: string;
 }
 
 const thunderForestKey = "apikey=dcf50cc5d36e405092768251d95d6848";
@@ -81,12 +81,37 @@ export const tileLayers = {
   },
 };
 
+export const tileLayersWMS = {
+  mundialis: {
+    baseUrl: "http://ows.mundialis.de/services/service?",
+    layers: {
+      osmWMS: "OSM-WMS",
+      osmOverlayWMS: "OSM-Overlay-WMS",
+      topoWMS: "TOPO-WMS",
+      topoOsmWMS: "TOPO-OSM-WMS",
+      srtmThirtyHillshade: "SRTM30-Hillshade",
+      srtmThirtyColored: "SRTM30-Colored",
+      srtmThirtyColoredHillshade: "SRTM30-Colored-Hillshade",
+    },
+  }
+  
+};
+
 export const tileLayerSelect = (
-  layer: string = tileLayers.baseLayers.default, config: ITileLayerOptions = {
-    attribution : ATRIBUTION, maxZoom: 20
+  layer: string = tileLayers.baseLayers.default,
+  config: ITileLayerOptions = {
+    attribution: ATRIBUTION,
+    maxZoom: 20,
   }
 ) => {
   return tileLayer(layer, config);
 };
 
-
+export const tileLayerWMSSelect = (
+  service: string = tileLayersWMS.mundialis.baseUrl,
+  wmsOptions = {
+    layers: tileLayersWMS.mundialis.layers.topoOsmWMS,
+  }
+) => {
+  return tileLayer.wms(service, wmsOptions);
+};

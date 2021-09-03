@@ -1,30 +1,33 @@
 import { GeoJsonObject } from "geojson";
-import { geoJSON, Map, tileLayer } from "leaflet";
+import { geoJSON, Map } from "leaflet";
 import { europeRiversGeoJSON } from "./../geojson/europe_rivers";
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
+import { tileLayerWMSSelect, tileLayersWMS } from "./../../config/tile-layer";
 
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
-tileLayer(tileLayers.thunderForest.pioneer, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerWMSSelect(
+  tileLayersWMS.mundialis.baseUrl,
+  {
+    layers: tileLayersWMS.mundialis.layers.topoOsmWMS
+  }
+).addTo(map);
 
 // Para crear información con el popup
 // https://leafletjs.com/reference-1.7.1.html#geojson-oneachfeature
 const geoJsonValue = geoJSON(europeRiversGeoJSON as GeoJsonObject, {
-  onEachFeature : (feature, layer) => {
-    layer.bindPopup("<h4 style=\"text-align: center\">"+feature.properties.NAME+"</h4>");
-  }
+  onEachFeature: (feature, layer) => {
+    layer.bindPopup(
+      '<h4 style="text-align: center">' + feature.properties.NAME + "</h4>"
+    );
+  },
 }).addTo(map);
 
 map.fitBounds([
-    [
-      geoJsonValue.getBounds().getNorthEast().lat,
-      geoJsonValue.getBounds().getNorthEast().lng,
-    ],
-    [
-      geoJsonValue.getBounds().getSouthWest().lat,
-      geoJsonValue.getBounds().getSouthWest().lng,
-    ],
-  ]);
+  [
+    geoJsonValue.getBounds().getNorthEast().lat,
+    geoJsonValue.getBounds().getNorthEast().lng,
+  ],
+  [
+    geoJsonValue.getBounds().getSouthWest().lat,
+    geoJsonValue.getBounds().getSouthWest().lng,
+  ],
+]);
