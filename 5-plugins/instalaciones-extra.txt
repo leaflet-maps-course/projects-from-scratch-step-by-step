@@ -52,4 +52,10 @@ import 'leaflet-path-drag/dist/L.Path.Drag'
 
 Hay que añadir las formas en typings para poder usar la propiedad "draggable"
 
+8.- Integrar mapas
+
+npm i leaflet-plugins
+
+
+
 

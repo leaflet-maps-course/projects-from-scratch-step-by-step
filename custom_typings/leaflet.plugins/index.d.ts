@@ -34,6 +34,9 @@ declare module "leaflet" {
     draggable: boolean;
   }
 
+  // leaflet-plugins
+  
+
   // leaflet-kml
   class KML {
     constructor(options: any);

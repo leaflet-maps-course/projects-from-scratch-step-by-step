@@ -1,7 +1,6 @@
 import axios from "axios";
-import { geoJSON, Map, tileLayer, circleMarker } from "leaflet";
-import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../config/tile-layer";
+import { geoJSON, Map, circleMarker } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 // Para personalizar las zonas con diferentes colores
 function getColor(numberValue: number) {
@@ -48,10 +47,8 @@ function bindPopup(feature: any, layer: any) {
 }
 
 const map = new Map("map", { center: [19.39068, -99.2836986], zoom: 5 });
-tileLayer(tileLayers.thunderForest.landscape, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.thunderForest.landscape).addTo(map);
+
 
 axios.get(
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"

@@ -1,8 +1,6 @@
-import { GeoJsonObject } from "geojson";
-import { geoJSON, Map, tileLayer } from "leaflet";
-import { ATRIBUTION } from "../../constants/general";
-import { tileLayers } from "../../config/tile-layer";
-import { mexicoStatesGeoJSON } from "../geojson/mexico_estados_geojson";
+import { geoJSON, Map } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
+import axios from "axios";
 
 // Para personalizar las zonas con diferentes colores
 function getColor(d: string) {
@@ -47,25 +45,30 @@ function bindPopup(feature: any, layer: any) {
 }
 
 const map = new Map("map", { center: [19.39068, -99.2836986], zoom: 5 });
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
 
-// Para crear información con el popup
-// https://leafletjs.com/reference-1.7.1.html#geojson-oneachfeature
-const geoJsonValue = geoJSON(mexicoStatesGeoJSON as GeoJsonObject, {
-  onEachFeature: bindPopup,
-  style: style,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.stadiaOutdoors).addTo(map);
 
-map.fitBounds([
-  [
-    geoJsonValue.getBounds().getNorthEast().lat,
-    geoJsonValue.getBounds().getNorthEast().lng,
-  ],
-  [
-    geoJsonValue.getBounds().getSouthWest().lat,
-    geoJsonValue.getBounds().getSouthWest().lng,
-  ],
-]);
+// Cargar el GeoJSON y añadirlo en el mapa
+axios
+  .get(
+    "https://raw.githubusercontent.com/leaflet-maps-course/resources/main/geojson/mexico_states.geojson"
+  )
+  .then((result) => {
+    // Para crear información con el popup
+    // https://leafletjs.com/reference-1.7.1.html#geojson-oneachfeature
+    const geoJsonValue = geoJSON(result.data, {
+      onEachFeature: bindPopup,
+      style: style,
+    }).addTo(map);
+
+    map.fitBounds([
+      [
+        geoJsonValue.getBounds().getNorthEast().lat,
+        geoJsonValue.getBounds().getNorthEast().lng,
+      ],
+      [
+        geoJsonValue.getBounds().getSouthWest().lat,
+        geoJsonValue.getBounds().getSouthWest().lng,
+      ],
+    ]);
+  });

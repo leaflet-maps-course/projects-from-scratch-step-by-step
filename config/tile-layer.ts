@@ -110,7 +110,7 @@ export const tileLayerSelect = (
 export const tileLayerWMSSelect = (
   service: string = tileLayersWMS.mundialis.baseUrl,
   wmsOptions = {
-    layers: tileLayersWMS.mundialis.layers.topoOsmWMS,
+    layers: tileLayersWMS.mundialis.layers.topoOsmWMS
   }
 ) => {
   return tileLayer.wms(service, wmsOptions);
