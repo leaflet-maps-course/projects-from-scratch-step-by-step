@@ -34,9 +34,9 @@ declare module "leaflet" {
     draggable: boolean;
   }
 
-  // leaflet-plugins
+  // leaflet-animated-marker
+  function animatedMarker(polyline: Polyline<any>, options: any): any
   
-
   // leaflet-kml
   class KML {
     constructor(options: any);

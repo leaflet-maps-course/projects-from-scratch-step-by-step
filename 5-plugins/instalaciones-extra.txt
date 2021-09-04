@@ -56,6 +56,15 @@ Hay que añadir las formas en typings para poder usar la propiedad "draggable"
 
 npm i leaflet-plugins
 
+9.- Marcadores dinámicos
+
+npm install -S leaflet.animatedmarker
+
+Hay que tipar en typings.d.ts
+// leaflet-animated-marker
+  function animatedMarker(polyline: Polyline<any>, options: any): any
+
+
 
 
 
