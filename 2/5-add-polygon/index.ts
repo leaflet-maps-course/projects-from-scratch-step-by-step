@@ -14,7 +14,7 @@ tileLayerSelect(tileLayers.baseLayers.thunderForest.neighbourhood).addTo(map);
   • Hexagon (6)
   • Octagon (8)
   */
-
+// Sin agujeros, será bidimensional [number, number][]
 // Figura geométrica con 3 ó más rectas
 const polygonItem = polygon(
   [
@@ -40,6 +40,7 @@ polygon(
   { color: "yellow", weight: 3 }
 ).addTo(map);
 
+// Sin agujeros, será bidimensional [number, number][]
 polygon(
   [
     [43.197199, -2.417625],
@@ -50,14 +51,38 @@ polygon(
   { color: "green", weight: 10 }
 ).addTo(map);
 
+// Si queremos un hueco al polígono (sin ser multi), necesitaremos respetar que sean 3 puntos
+// y en vez de ser un array numérico bidimensional, será tridimensional
+// [number, number][][]
+/* [
+    [ <===== Polígono en el primer apartado con relleno
+      [] posiciones (mínimo 3 puntos)
+      ...
+    ],
+    (OPCIONAL)
+    [ <====== Polígono que ocasionará un agujero en un polígono seleccionado
+      [] posiciones (mínimo 3 puntos)
+      ...
+    ]
+]*/
+
 const sixSides = polygon(
   [
-    [43.197199, -2.417625],
-    [43.165409, -2.385702],
-    [43.164378, -2.440947],
-    [43.197199, -2.45],
-    [43.217199, -2.478],
-    [43.237199, -2.49],
+    [
+      [43.197199, -2.417625],
+      [43.165409, -2.385702],
+      [43.164378, -2.440947],
+      [43.197199, -2.45],
+      [43.217199, -2.478],
+      [43.237199, -2.49],
+    ],
+    [
+      // Agujero con un polígono de 3 lados, un triángulo
+      // Está dentro del otro polígono y por eso hace el hueco
+      [43.223511, -2.472],
+      [43.211764, -2.465],
+      [43.214013, -2.454],
+    ],
   ],
   { color: "orange", weight: 8 }
 ).addTo(map);

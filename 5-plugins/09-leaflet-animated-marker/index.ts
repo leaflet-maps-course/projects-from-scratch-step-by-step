@@ -303,6 +303,9 @@ const markers = [];
 routeLines.map((routeLine) => {
   var marker = animatedMarker(routeLine.getLatLngs(), {
     autoStart: true,
+    distance: 5000000,
+    // ms
+    interval: 100, 
     onEnd: function() {
       map.removeLayer(this);
     }

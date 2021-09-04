@@ -3,7 +3,7 @@ import gpxParser from 'gpxparser';
 import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 // Añadimos en los types, lo relacionado a KML
 /// <reference path="../../custom_typings/leaflet.plugins/index.d.ts"/>
-import { Map, polyline, animatedMarker } from "leaflet";
+import { Map, polyline, animatedMarker, LatLng, Polyline } from "leaflet";
 import "leaflet.animatedmarker/src/AnimatedMarker";
 
 
@@ -54,14 +54,14 @@ function drawTrack(trackPoints: Array<{lat: number, lon: number}>) {
     +p.lon.toFixed(5),
   ]);
 
-  const polylineItem = polyline(coordinates, { weight: 5, color: "green", lineJoin: "bevel" });
+  const polylineItem: Polyline = polyline(coordinates, { weight: 5, color: "green", lineJoin: "bevel" });
   const routeLines = [polylineItem];
   polylineItem.addTo(mapLayout);
   // zoom the map to the polyline
   mapLayout.fitBounds(polylineItem.getBounds());
   const markers = [];
-  routeLines.map((routeLine) => {
-    const marker = animatedMarker(routeLine.getLatLngs(), {
+  routeLines.map((routeLine: Polyline) => {
+    const marker = animatedMarker(routeLine.getLatLngs() as any, {
       autoStart: true,
       distance: 5000000,
       // ms

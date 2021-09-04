@@ -1,6 +1,5 @@
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
-import { Map, tileLayer } from "leaflet";
+import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
+import { Map } from "leaflet";
 import { CustomControl } from "../custom-controls";
 
 const map = new Map("map", {
@@ -9,10 +8,8 @@ const map = new Map("map", {
   zoomControl: false, // Escondemos el control de zoom por defecto
 });
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.hikeBike).addTo(map);
+
 
 // Documentación oficial del control
 // https://leafletjs.com/reference-1.7.1.html#control
