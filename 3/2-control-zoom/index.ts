@@ -1,23 +1,19 @@
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
-import { control, Map, tileLayer } from "leaflet";
+import { tileLayerSelect, tileLayers } from './../../config/tile-layer';
+import { control, Map } from "leaflet";
 
 const map = new Map("map", {
-  center: [43.1736976, -2.4173474],
-  zoom: 9,
+  center: [40.4378698,-3.8196205],
+  zoom: 11,
   zoomControl: false, // Escondemos el control de zoom por defecto
 });
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.cartoDb.positron).addTo(map);
 
 // Documentación oficial del control
 // https://leafletjs.com/reference-1.7.1.html#control
 
 // Controlamos la escala con sistema métrico
-control.scale({ metric: true }).addTo(map);
+control.scale({ imperial: false, metric: true }).addTo(map);
 
 // Control del zoom
 control

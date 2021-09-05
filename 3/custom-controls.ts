@@ -1,7 +1,10 @@
-import { Control, DomEvent, DomUtil, Map, marker } from "leaflet";
+import { Control, DomEvent, DomUtil, Map, marker, Util } from "leaflet";
 // + ejemplos: https://www.tabnine.com/code/javascript/modules/leaflet
 
 const watermark = Control.extend({
+  initialize: function(options: object) {
+    Util.setOptions(this, options);
+  },
   options: {
     position: "topleft",
   },
@@ -16,6 +19,9 @@ const watermark = Control.extend({
 });
 
 const createTitleSubtitleControl = Control.extend({
+  initialize: function(options: object) {
+    Util.setOptions(this, options);
+  },
   options: {
     position: "bottomleft",
   },
@@ -31,10 +37,12 @@ const createTitleSubtitleControl = Control.extend({
 });
 
 const customControl = Control.extend({
+  initialize: function(options: object) {
+    Util.setOptions(this, options);
+  },
   options: {
     position: "topleft",
   },
-
   onAdd: function (map: Map) {
     var container = DomUtil.create("input");
     container.type = "button";
@@ -70,11 +78,6 @@ const customControl = Control.extend({
   },
 });
 
-const createLegendPanel = Control.extend({
-  options: {
-    position: "bottomright",
-  },
-})
 
 const fullScreenMap = Control.extend({
   options: {
@@ -110,8 +113,8 @@ const fullScreenMap = Control.extend({
 
     return container;
   },
-})
-export const LegendPanel = new createLegendPanel();
+});
+
 
 export const TitleSubtitleControl = new createTitleSubtitleControl();
 export const CustomControl = new customControl();

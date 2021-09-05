@@ -1,12 +1,9 @@
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
+import { tileLayerSelect, tileLayers } from './../../config/tile-layer';
 import {
   circleMarker,
   Control,
-  control,
   DomUtil,
   Map,
-  tileLayer,
 } from "leaflet";
 
 const map = new Map("map", {
@@ -15,10 +12,7 @@ const map = new Map("map", {
   zoomControl: true, // Escondemos el control de zoom por defecto
 });
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.openTopoMap).addTo(map);
 
 //data
 const myPoints = [
@@ -39,14 +33,14 @@ const breaks = [17, 14, 0];
 const labels = ["Muy bueno", "Suficiente", "Malo"];
 
 //set color of marker function
-function getColor(d) {
+function getColor(d: number) {
   return d >= breaks[0] ? "green" : d >= breaks[1] ? "#ffff00" : "red";
 }
 
 for (let i = 0; i < myPoints.length; i++) {
   circleMarker([+myPoints[i][1], +myPoints[i][2]], {
     radius: +myPoints[i][1]/2,
-    fillColor: getColor(myPoints[i][0]),
+    fillColor: getColor(myPoints[i][0] as number),
     color: "#000",
     stroke: true,
     weight: 1,

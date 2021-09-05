@@ -1,12 +1,11 @@
-import { tileLayers } from "./../../config/tile-layer";
-import { ATRIBUTION } from "./../../constants/general";
-import { control, Map, tileLayer } from "leaflet";
+import { tileLayers, tileLayerSelect } from "./../../config/tile-layer";
+import { control, LatLngExpression, Map } from "leaflet";
+import { PLACES_LIST_LOCATIONS } from "../../config/locations";
 
-const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 9 });
+const place = PLACES_LIST_LOCATIONS.VENECIA_ITALIA as LatLngExpression;
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
-}).addTo(map);
+const map = new Map("map", { center: place, zoom: 13 });
 
-control.scale({metric: true}).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.openTopoMap).addTo(map);
+
+control.scale({maxWidth: 200}).addTo(map);
