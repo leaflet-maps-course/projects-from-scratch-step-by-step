@@ -1,8 +1,8 @@
 import { Control, DomEvent, DomUtil, Map, marker, Util } from "leaflet";
 // + ejemplos: https://www.tabnine.com/code/javascript/modules/leaflet
 
-const watermark = Control.extend({
-  initialize: function(options: object) {
+const Watermark = Control.extend({
+  initialize: function (options: object) {
     Util.setOptions(this, options);
   },
   options: {
@@ -18,8 +18,8 @@ const watermark = Control.extend({
   },
 });
 
-const createTitleSubtitleControl = Control.extend({
-  initialize: function(options: object) {
+const TitleSubtitleControl = Control.extend({
+  initialize: function (options: object) {
     Util.setOptions(this, options);
   },
   options: {
@@ -36,8 +36,8 @@ const createTitleSubtitleControl = Control.extend({
   },
 });
 
-const customControl = Control.extend({
-  initialize: function(options: object) {
+const CustomControl = Control.extend({
+  initialize: function (options: object) {
     Util.setOptions(this, options);
   },
   options: {
@@ -78,18 +78,20 @@ const customControl = Control.extend({
   },
 });
 
-
-const fullScreenMap = Control.extend({
+const FullScreenMap = Control.extend({
   options: {
-    position: "topleft"
+    position: "topleft",
   },
   onAdd: function (_: Map) {
-    var container = DomUtil.create("input", "leaflet-control-zoom leaflet-bar leaflet-control");
+    var container = DomUtil.create(
+      "input",
+      "leaflet-control-zoom leaflet-bar leaflet-control"
+    );
     container.type = "button";
     container.title = "Ver en pantalla completa";
     // container.innerHTML = "hola"
-    container.style.backgroundImage = 
-    "url(https://cdn-icons-png.flaticon.com/512/2089/2089670.png)";
+    container.style.backgroundImage =
+      "url(https://cdn-icons-png.flaticon.com/512/2089/2089670.png)";
     container.style.backgroundSize = "15px 15px";
     container.style.backgroundRepeat = "no-repeat";
     container.style.backgroundPosition = "50% 50%";
@@ -99,24 +101,22 @@ const fullScreenMap = Control.extend({
     container.style.lineHeight = "30px";
     container.style.fontSize = "22px";
     container.style.fontWeight = "bold";
-    container.style.cursor = "pointer";    
+    container.style.cursor = "pointer";
 
     // Esto es equivalente a hacer container.contextmenu...
     DomEvent.on(container, "contextmenu", (e) => DomEvent.stopPropagation(e));
 
     container.onclick = () => {
-     
       const mapElement = document.getElementById("map");
       mapElement?.requestFullscreen();
-      
     };
 
     return container;
   },
 });
 
-
-export const TitleSubtitleControl = new createTitleSubtitleControl();
-export const CustomControl = new customControl();
-export const Watermark = new watermark();
-export const FullScreen = new fullScreenMap();
+export const titleSubtitleControl = (options?: object) =>
+  new TitleSubtitleControl(options);
+export const customControl = (options?: object) => new CustomControl(options);
+export const watermark = (options?: object) => new Watermark(options);
+export const fullScreen = (options?: object) => new FullScreenMap(options);

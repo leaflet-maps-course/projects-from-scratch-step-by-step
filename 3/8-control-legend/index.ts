@@ -1,10 +1,5 @@
-import { tileLayerSelect, tileLayers } from './../../config/tile-layer';
-import {
-  circleMarker,
-  Control,
-  DomUtil,
-  Map,
-} from "leaflet";
+import { tileLayerSelect, tileLayers } from "./../../config/tile-layer";
+import { circleMarker, Control, DomUtil, Map } from "leaflet";
 
 const map = new Map("map", {
   center: [43, -93],
@@ -39,7 +34,7 @@ function getColor(d: number) {
 
 for (let i = 0; i < myPoints.length; i++) {
   circleMarker([+myPoints[i][1], +myPoints[i][2]], {
-    radius: +myPoints[i][1]/2,
+    radius: +myPoints[i][1] / 2,
     fillColor: getColor(myPoints[i][0] as number),
     color: "#000",
     stroke: true,

@@ -1,7 +1,6 @@
-import { tileLayers } from "../../config/tile-layer";
-import { ATRIBUTION } from "../../constants/general";
-import { Map, tileLayer } from "leaflet";
-import { TitleSubtitleControl } from "../custom-controls";
+import { tileLayersWMS, tileLayerWMSSelect } from './../../config/tile-layer';
+import { Map } from "leaflet";
+import { titleSubtitleControl } from '../custom-controls';
 
 const map = new Map("map", {
   center: [43.1736976, -2.4173474],
@@ -9,12 +8,14 @@ const map = new Map("map", {
   zoomControl: false, // Escondemos el control de zoom por defecto
 });
 
-tileLayer(tileLayers.default, {
-  maxZoom: 17,
-  attribution: ATRIBUTION,
+tileLayerWMSSelect(tileLayersWMS.mundialis.baseUrl, {
+  layers: tileLayersWMS.mundialis.layers.topoOsmWMS
 }).addTo(map);
 
 // Documentación oficial del control
 // https://leafletjs.com/reference-1.7.1.html#control
 // Creamos un elemento de imagen
-TitleSubtitleControl.addTo(map);
+titleSubtitleControl().addTo(map);
+titleSubtitleControl({position: 'bottomright'}).addTo(map);
+titleSubtitleControl({position: 'topright'}).addTo(map);
+titleSubtitleControl({position: 'topleft'}).addTo(map);
