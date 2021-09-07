@@ -1,5 +1,5 @@
 import axios from "axios";
-import { geoJSON, Map, circleMarker } from "leaflet";
+import { geoJSON, Map, circleMarker, circle } from "leaflet";
 import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
 
 // Para personalizar las zonas con diferentes colores
@@ -55,6 +55,8 @@ axios.get(
 ).then((result) => {
   const geoJsonValue = geoJSON(result.data, {
     onEachFeature: bindPopup,
+    // https://leafletjs.com/reference-1.7.1.html#geojson-pointtolayer
+    // Esto se usa porque en el GeoJSON tenemos las features "Point"
     pointToLayer: (feature, latlng) => {
       return circleMarker(latlng, { radius: 4.5 * feature.properties.mag });
     },

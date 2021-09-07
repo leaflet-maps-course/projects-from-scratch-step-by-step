@@ -1,7 +1,7 @@
 import { GeoJsonObject } from "geojson";
 import { geoJSON, Map } from "leaflet";
-import { europeRiversGeoJSON } from "./../geojson/europe_rivers";
-import { tileLayerWMSSelect, tileLayersWMS } from "./../../config/tile-layer";
+import { europeRiversGeoJSON } from "../geojson/europe_rivers";
+import { tileLayerWMSSelect, tileLayersWMS } from "../../config/tile-layer";
 import axios from "axios";
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
 tileLayerWMSSelect(tileLayersWMS.mundialis.baseUrl, {
