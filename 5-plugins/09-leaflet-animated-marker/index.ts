@@ -1,8 +1,8 @@
 import { tileLayers, tileLayerSelect } from "./../../config/tile-layer";
 // Añadimos en los types, lo relacionado a KML
 /// <reference path="../../custom_typings/leaflet.plugins/index.d.ts"/>
-import { Map, polyline, animatedMarker } from "leaflet";
 import "leaflet.animatedmarker/src/AnimatedMarker";
+import { Map, polyline, animatedMarker } from "leaflet";
 const map = new Map("map", {
   center: [40.719298, -73.999743],
   zoom: 12,
@@ -305,14 +305,12 @@ routeLines.map((routeLine) => {
     autoStart: true,
     distance: 5000000,
     // ms
-    interval: 100, 
-    onEnd: function() {
+    interval: 100,
+    onEnd: function () {
       map.removeLayer(this);
-    }
+    },
   });
 
   map.addLayer(marker);
   markers.push(marker);
 });
-
-

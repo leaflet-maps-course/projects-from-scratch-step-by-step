@@ -3,8 +3,9 @@ import axios from "axios";
 // Añadimos en los types, lo relacionado a KML
 /// <reference path="../../custom_typings/leaflet.plugins/index.d.ts"/>
 import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
-import { KML, Map } from "leaflet";
 import "leaflet-kml/L.KML";
+import { KML, Map } from "leaflet";
+
 
 const map = new Map("map", {
   center: [51.505, -10],
