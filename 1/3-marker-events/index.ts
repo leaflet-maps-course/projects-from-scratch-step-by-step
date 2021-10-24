@@ -1,17 +1,21 @@
 import { Map, marker } from "leaflet";
-import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
+import { tileLayers } from "../../config/tile-layers/data";
+import { tileLayerSelect } from "../../config/tile-layers/functions";
+
 // Inicializamos el mapa en el centro especificado
-const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
+// Chamonix
+const map = new Map("map", { center: [45.9295043,6.7890115], zoom: 12 });
 
 // Añadimos la capa base
-tileLayerSelect(tileLayers.baseLayers.esri.worldStreetMap).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.osmHot.map).addTo(map);
 
-// Añadimos el marcador
-const markerItem = marker([43.180930, -2.421315], {
+// Añadimos el marcador y lo hacemos arrastrable
+const markerItem = marker([45.9224106,6.8656577], {
   draggable: true
 }).addTo(map);
 
 /** Eventos del marcador - no heredados */
+// https://leafletjs.com/reference-1.7.1.html#marker
 // Estos funcionan si el marcador es "draggable"
 markerItem.on("dragstart", () => {
   console.log("Empezamos a arrastrar (se ejecuta una vez)");
@@ -60,7 +64,6 @@ markerItem.on("mouseout", () => {
 });
 
 
-// Centrar el mapa teniendo en cuenta el marcador
 map.fitBounds([
-    [markerItem.getLatLng().lat, markerItem.getLatLng().lng]
+  [markerItem.getLatLng().lat, markerItem.getLatLng().lng]
 ]);

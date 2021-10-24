@@ -1,6 +1,6 @@
 export const drinkWaterSoraluze = [
   {
-    name: "Sagr Erreka",
+    name: "Sagar Erreka",
     lat: 43.1771136,
     lon: -2.4203018,
   },

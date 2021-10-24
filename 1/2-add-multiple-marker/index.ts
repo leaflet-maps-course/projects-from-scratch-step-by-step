@@ -1,12 +1,14 @@
 import { Map, marker, LayerGroup } from "leaflet";
-import { tileLayers, tileLayerSelect } from "../../config/tile-layer";
+
 import { drinkWaterSoraluze } from "../../assets/data/markers/drink_water_soraluze";
+import { tileLayers } from "../../config/tile-layers/data";
+import { tileLayerSelect } from "../../config/tile-layers/functions";
 
 // Inicializamos el mapa en el centro especificado
 const map = new Map("map", { center: [43.1736976, -2.4173474], zoom: 12 });
 
 // Añadimos la capa base
-tileLayerSelect(tileLayers.baseLayers.cartoDb.voyager).addTo(map);
+tileLayerSelect(tileLayers.baseLayers.cartoDb.map.voyager).addTo(map);
 
 // Añadimos la capa de los marcadores mediante un LayerGroup
 // https://leafletjs.com/reference-1.7.1.html#layergroup
